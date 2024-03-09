@@ -13,3 +13,9 @@ Next Steps:
 - run baselines
 - think about detecting methods
 
+## March 9
+Andy is working on Activation Clustering
+Saiteja is working on Feature Covariance
+Jiawei is integrating these baselines into corrective benchmark framework and trying new detection methods
+Also, submit a request to CAIS for GPU access
+
