@@ -31,25 +31,35 @@
 
 2️⃣
 
-[/] finishing the baseline of feature coraviance 🌟🌟
+~~[Cancelled] finishing the baseline of feature coraviance~~ -> handed over to Saiteja
 
-[] using the same dataset to get baseline 1's result (activating clustering) 
+[X] finish activating clustering 
 
-[] check the influence function implementation
+[/] check the influence function implementation
 
 ---
 
 ### Current Poison Setup
-The dataset I'm using is CIFAR-10 including 50,000 training images and 10,000 valid images. 
+For activation clustering, the <u>datasets</u> I'm using are:  
+1. **MNIST**: 7,500 training images and 10,000 test images
+2. **CIFAR-10**: 50,000 training images and 10,000 test images. 
 
-The model is ResNet.
+The <u>model</u> is basic Keras CNN:
 
-The poison method is adding a pixel of value = (101, 0, 25) at the "center" of a image, specifically the position is [11, 16] of a 32 * 32 three-channel image
+![Alt text](image.png)
 
-The target to be poisoned is images of number "9", by adding the above trigger, we flip the corresponding labels to "4". 
+The <u>poison methods</u> are:  
+![Alt text](image-1.png)
 
-About the size to poison: I currently randomly select 500 images from the class = 9. (i.e. the poison rate = 1%)
 
-In this setup, the model trained with poisoned data achieve 83.05% acc on clean test examples and 90.70% acc on examples with trigger, which means the attack is successful.
+The poison strategy is to form "one shift" mapping:  
+i.e. for original mappings (source to target): **0->0, 1->1, ..., 9->9**   
+The poisoned mappings are: **0->1, 1->2, ..., 9->0**  
+
+About the size to poison: 
+I used 1% and 33% poison rate for both MNIST and CIFAR10.
+
+<u>*Click below to get more results.*</u>
 
 [More details...](https://sepia-office-ba0.notion.site/details-deeeab429806452a809e7f045c67a0af?pvs=4)
+
