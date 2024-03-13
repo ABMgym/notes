@@ -19,3 +19,6 @@ Saiteja is working on Feature Covariance \
 Jiawei is integrating these baselines into corrective benchmark framework and trying new detection methods.
 Also, submit a request to CAIS for GPU access
 
+## March 13
+We are stucked with GPU access
+
