@@ -8,5 +8,6 @@ ToDo:\
 Integrate 2 baselines in the corrective benchmark framework
 
 ## Mar 17
+Integrated Spectral Signature into corrective unlearning benchmark, running experiments \
 Read paper: \
 [RETHINKING MACHINE UNLEARNING FOR LARGE LANGUAGE MODELS](https://arxiv.org/pdf/2402.08787.pdf)
