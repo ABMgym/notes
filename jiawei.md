@@ -11,3 +11,7 @@ Integrate 2 baselines in the corrective benchmark framework
 Integrated Spectral Signature into corrective unlearning benchmark, running experiments \
 Read paper: \
 [RETHINKING MACHINE UNLEARNING FOR LARGE LANGUAGE MODELS](https://arxiv.org/pdf/2402.08787.pdf)
+
+## Mar 24
+Working with visualization code. \
+Wait for GPU access to CAIS cluster.
