@@ -22,3 +22,8 @@ Also, submit a request to CAIS for GPU access
 ## March 13
 We are stucked with GPU access
 
+## March 22
+Jiawei has already implemented 2 baselines in the corective unlearning benchmark, currently working with the code to visualize the comparison of different unlearning methods. \
+Andy is learning influential function. \
+We have GPU access from CAIS cluster. Waiting to be added to the cluster. 
+
