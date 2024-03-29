@@ -35,7 +35,19 @@
 
 [X] finish activating clustering 
 
-[/] check the influence function implementation
+[X] check the influence function implementation
+
+3️⃣
+
+[X] read fast-influence and run their code on some exmaples
+
+[X] read the two papers shared in slack
+
+4️⃣
+
+[/] try as many implementations of influence function as possible
+
+[/] integrate them into the bench
 
 ---
 
@@ -46,10 +58,10 @@ For activation clustering, the <u>datasets</u> I'm using are:
 
 The <u>model</u> is basic Keras CNN:
 
-![Alt text](image.png)
+![Alt text](andy_attachments/image.png)
 
 The <u>poison methods</u> are:  
-![Alt text](image-1.png)
+![Alt text](andy_attachments/image-1.png)
 
 
 The poison strategy is to form "one shift" mapping:  
