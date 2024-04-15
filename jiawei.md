@@ -45,4 +45,7 @@ Collect results of 2 baselines: ActivationClustering and SpectralSignature.
 | **Test Retain Acc**   | Null                                     | Null                                     |
 | **Deletion Size**     | 0                                        | 0                                        |
 | **Unlearn Time**      | 24.40451660300000                        | 52.83270964700000                        |
-| **Train Clean Acc**   | 0.91274                                  | 0.90858                                
+| **Train Clean Acc**   | 0.91274                                  | 0.90858     
+
+## April 14
+Implement a Influence method based on Influence function threshold in the benchmark.
