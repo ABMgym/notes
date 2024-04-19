@@ -18,7 +18,7 @@ Wait for GPU access to CAIS cluster.
 
 ## Apr 4
 Collect results:
-| Metric            | Naive              | SpectralSignature | InfluenceFunction-10 | InfluenceFunction | ActivationClustering |
+| Metric            | Naive              | SpectralSignature | InfluenceFunction (threshold: -10.0) | InfluenceFunction (threshold: 0.0) | ActivationClustering |
 |-------------------|--------------------|-------------------|----------------------|-------------------|----------------------|
 | dataset           | CIFAR10            | CIFAR10           | CIFAR10              | CIFAR10           | CIFAR10              |
 | model             | resnet9            | resnet9           | resnet9              | resnet9           | resnet9              |
