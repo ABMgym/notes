@@ -38,14 +38,14 @@ Collect results:
 | **msteps**            | Null                                     | Null                                     | Null                                   |
 | **Delete Acc**        | 0.0                                      | 0.0                                      | 0.0                                    |
 | **Delete Err**        | 101.0                                    | 101.0                                    | 101.0                                  |
-| **Manip Acc**         | 0.192                                    | 0.196                                    | 0.192                                  |
-| **Test Acc**          | 0.1969                                   | 0.2134                                   | 0.1969                                 |
-| **Manip Clean Acc**   | 0.836                                    | 0.858                                    | 0.836                                  |
-| **Test Clean Acc**    | 0.857                                    | 0.8547                                   | 0.857                                 |
+| **Manip Acc**         | 0.192                                    | 0.196                                    | 0.196                                  |
+| **Test Acc**          | 0.1969                                   | 0.2134                                   | 0.2134                                 |
+| **Manip Clean Acc**   | 0.836                                    | 0.858                                    | 0.858                                  |
+| **Test Clean Acc**    | 0.857                                    | 0.8547                                   | 0.8547                                 |
 | **Test Retain Acc**   | Null                                     | Null                                     | Null                                   |
 | **Deletion Size**     | 0                                        | 0                                        | 0                                      |
-| **Unlearn Time**      | 24.40451660300000                        | 52.83270964700000                        | 24.166803210000005                      |
-| **Train Clean Acc**   | 0.91274                                  | 0.90858                                  | 0.91274                                |
+| **Unlearn Time**      | 24.40451660300000                        | 52.83270964700000                        | 25.294925999000007                      |
+| **Train Clean Acc**   | 0.91274                                  | 0.90858                                  | 0.90858                                |
 
 
 ## April 14
