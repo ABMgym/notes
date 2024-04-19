@@ -18,35 +18,34 @@ Wait for GPU access to CAIS cluster.
 
 ## Apr 4
 Collect results:
-| Attribute         | SpectralSignature                        | ActivationClustering                    | Influence (threshold 0.0)              | Influence (threshold = -10.0)         |
-|-------------------|------------------------------------------|-----------------------------------------|----------------------------------------|---------------------------------------|
-| **Dataset**           | CIFAR10                                  | CIFAR10                                  | CIFAR10                                | CIFAR10                               |
-| **Model**             | resnet9                                  | resnet9                                  | resnet9                                | resnet9                               |
-| **Dataset Method**    | poisoning                                | poisoning                                | poisoning                              | poisoning                             |
-| **Forget Set Size**   | 500                                      | 500                                      | 500                                    | 500                                   |
-| **Patch Size**        | 3                                        | 3                                        | 3                                      | 3                                     |
-| **Pretrain Iters**    | 1000                                     | 1000                                     | 1000                                   | 1000                                  |
-| **Pretrain LR**       | 0.025                                    | 0.025                                    | 0.025                                  | 0.025                                 |
-| **Unlearn Method**    | Naive                                    | Naive                                    | Naive                                  | Naive                                 |
-| **Exp Name**          | pretrainmodel                            | pretrainmodel                            | pretrainmodel                          | pretrainmodel                         |
-| **Train Iters**       | Null                                     | Null                                     | Null                                   | Null                                  |
-| **k**                 | Null                                     | Null                                     | Null                                   | Null                                  |
-| **Factor**            | Null                                     | Null                                     | Null                                   | Null                                  |
-| **kd_T**              | Null                                     | Null                                     | Null                                   | Null                                  |
-| **Gamma**             | Null                                     | Null                                     | Null                                   | Null                                  |
-| **Alpha**             | Null                                     | Null                                     | Null                                   | Null                                  |
-| **msteps**            | Null                                     | Null                                     | Null                                   | Null                                  |
-| **Delete Acc**        | 0.0                                      | 0.0                                      | 0.0                                    | 0.0                                   |
-| **Delete Err**        | 101.0                                    | 101.0                                    | 101.0                                  | 101.0                                 |
-| **Manip Acc**         | 0.192                                    | 0.196                                    | 0.196                                  | 0.192                                 |
-| **Test Acc**          | 0.1969                                   | 0.2134                                   | 0.2134                                 | 0.1969                                |
-| **Manip Clean Acc**   | 0.836                                    | 0.858                                    | 0.858                                  | 0.836                                 |
-| **Test Clean Acc**    | 0.857                                    | 0.8547                                   | 0.8547                                 | 0.857                                 |
-| **Test Retain Acc**   | Null                                     | Null                                     | Null                                   | Null                                  |
-| **Deletion Size**     | 0                                        | 0                                        | 0                                      | 0                                     |
-| **Unlearn Time**      | 24.40451660300000                        | 52.83270964700000                        | 25.294925999000007                     | 23.872234051999996                    |
-| **Train Clean Acc**   | 0.91274                                  | 0.90858                                  | 0.90858                                | 0.91274                               |
-
+| Metric            | Naive              | SpectralSignature | InfluenceFunction-10 | InfluenceFunction | ActivationClustering |
+|-------------------|--------------------|-------------------|----------------------|-------------------|----------------------|
+| dataset           | CIFAR10            | CIFAR10           | CIFAR10              | CIFAR10           | CIFAR10              |
+| model             | resnet9            | resnet9           | resnet9              | resnet9           | resnet9              |
+| dataset_method    | poisoning          | poisoning         | poisoning            | poisoning         | poisoning            |
+| forget_set_size   | 500                | 500               | 500                  | 500               | 500                  |
+| patch_size        | 3                  | 3                 | 3                    | 3                 | 3                    |
+| pretrain_iters    | 1000               | 1000              | 1000                 | 1000              | 1000                 |
+| pretrain_lr       | 0.025              | 0.025             | 0.025                | 0.025             | 0.025                |
+| unlearn_method    | Naive              | SpectralSignature | InfluenceFunction-10 | InfluenceFunction | ActivationClustering |
+| exp_name          | pretrainmodel      | unlearn           | unlearn              | unlearn           | unlearn              |
+| train_iters       | Null               | Null              | Null                 | Null              | Null                 |
+| k                 | Null               | Null              | Null                 | Null              | Null                 |
+| factor            | Null               | Null              | Null                 | Null              | Null                 |
+| kd_T              | Null               | Null              | Null                 | Null              | Null                 |
+| gamma             | Null               | Null              | Null                 | Null              | Null                 |
+| alpha             | Null               | Null              | Null                 | Null              | Null                 |
+| msteps            | Null               | Null              | Null                 | Null              | Null                 |
+| delete_acc        | 0.0                | 0.592             | 0.352                | 0.404             | 0.2                  |
+| delete_err        | 101.0              | 0.444             | 0.732                | 0.66              | 0.88                 |
+| manip_acc         | 0.192              | 0.592             | 0.358                | 0.412             | 0.228                |
+| test_acc          | 0.1969             | 0.5665            | 0.3302               | 0.3917            | 0.2136               |
+| manip_clean_acc   | 0.836              | 0.796             | 0.81                 | 0.812             | 0.754                |
+| test_clean_acc    | 0.857              | 0.7969            | 0.8044               | 0.8023            | 0.762                |
+| test_retain_acc   | Null               | Null              | Null                 | Null              | Null                 |
+| deletion_size     | 0                  | 500               | 250                  | 250               | 250                  |
+| unlearn_time      | 23.9510807         | 0                 | 0                    | 0                 | 0                    |
+| train_clean_acc   | 0.91274            | 0.84192           | 0.83422              | 0.83382           | 0.81254              |
 
 ## April 14
 Implement a Influence method based on Influence function threshold in the benchmark.
