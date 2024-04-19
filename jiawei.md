@@ -18,34 +18,34 @@ Wait for GPU access to CAIS cluster.
 
 ## Apr 4
 Collect results:
-| Attribute         | SpectralSignature                        | ActivationClustering                    | Influence (threshold 0.0)              |
-|-------------------|------------------------------------------|-----------------------------------------|----------------------------------------|
-| **Dataset**           | CIFAR10                                  | CIFAR10                                  | CIFAR10                                |
-| **Model**             | resnet9                                  | resnet9                                  | resnet9                                |
-| **Dataset Method**    | poisoning                                | poisoning                                | poisoning                              |
-| **Forget Set Size**   | 500                                      | 500                                      | 500                                    |
-| **Patch Size**        | 3                                        | 3                                        | 3                                      |
-| **Pretrain Iters**    | 1000                                     | 1000                                     | 1000                                   |
-| **Pretrain LR**       | 0.025                                    | 0.025                                    | 0.025                                  |
-| **Unlearn Method**    | Naive                                    | Naive                                    | Naive                                  |
-| **Exp Name**          | pretrainmodel                            | pretrainmodel                            | pretrainmodel                          |
-| **Train Iters**       | Null                                     | Null                                     | Null                                   |
-| **k**                 | Null                                     | Null                                     | Null                                   |
-| **Factor**            | Null                                     | Null                                     | Null                                   |
-| **kd_T**              | Null                                     | Null                                     | Null                                   |
-| **Gamma**             | Null                                     | Null                                     | Null                                   |
-| **Alpha**             | Null                                     | Null                                     | Null                                   |
-| **msteps**            | Null                                     | Null                                     | Null                                   |
-| **Delete Acc**        | 0.0                                      | 0.0                                      | 0.0                                    |
-| **Delete Err**        | 101.0                                    | 101.0                                    | 101.0                                  |
-| **Manip Acc**         | 0.192                                    | 0.196                                    | 0.196                                  |
-| **Test Acc**          | 0.1969                                   | 0.2134                                   | 0.2134                                 |
-| **Manip Clean Acc**   | 0.836                                    | 0.858                                    | 0.858                                  |
-| **Test Clean Acc**    | 0.857                                    | 0.8547                                   | 0.8547                                 |
-| **Test Retain Acc**   | Null                                     | Null                                     | Null                                   |
-| **Deletion Size**     | 0                                        | 0                                        | 0                                      |
-| **Unlearn Time**      | 24.40451660300000                        | 52.83270964700000                        | 25.294925999000007                      |
-| **Train Clean Acc**   | 0.91274                                  | 0.90858                                  | 0.90858                                |
+| Attribute         | SpectralSignature                        | ActivationClustering                    | Influence (threshold 0.0)              | Influence (threshold = -10.0)         |
+|-------------------|------------------------------------------|-----------------------------------------|----------------------------------------|---------------------------------------|
+| **Dataset**           | CIFAR10                                  | CIFAR10                                  | CIFAR10                                | CIFAR10                               |
+| **Model**             | resnet9                                  | resnet9                                  | resnet9                                | resnet9                               |
+| **Dataset Method**    | poisoning                                | poisoning                                | poisoning                              | poisoning                             |
+| **Forget Set Size**   | 500                                      | 500                                      | 500                                    | 500                                   |
+| **Patch Size**        | 3                                        | 3                                        | 3                                      | 3                                     |
+| **Pretrain Iters**    | 1000                                     | 1000                                     | 1000                                   | 1000                                  |
+| **Pretrain LR**       | 0.025                                    | 0.025                                    | 0.025                                  | 0.025                                 |
+| **Unlearn Method**    | Naive                                    | Naive                                    | Naive                                  | Naive                                 |
+| **Exp Name**          | pretrainmodel                            | pretrainmodel                            | pretrainmodel                          | pretrainmodel                         |
+| **Train Iters**       | Null                                     | Null                                     | Null                                   | Null                                  |
+| **k**                 | Null                                     | Null                                     | Null                                   | Null                                  |
+| **Factor**            | Null                                     | Null                                     | Null                                   | Null                                  |
+| **kd_T**              | Null                                     | Null                                     | Null                                   | Null                                  |
+| **Gamma**             | Null                                     | Null                                     | Null                                   | Null                                  |
+| **Alpha**             | Null                                     | Null                                     | Null                                   | Null                                  |
+| **msteps**            | Null                                     | Null                                     | Null                                   | Null                                  |
+| **Delete Acc**        | 0.0                                      | 0.0                                      | 0.0                                    | 0.0                                   |
+| **Delete Err**        | 101.0                                    | 101.0                                    | 101.0                                  | 101.0                                 |
+| **Manip Acc**         | 0.192                                    | 0.196                                    | 0.196                                  | 0.192                                 |
+| **Test Acc**          | 0.1969                                   | 0.2134                                   | 0.2134                                 | 0.1969                                |
+| **Manip Clean Acc**   | 0.836                                    | 0.858                                    | 0.858                                  | 0.836                                 |
+| **Test Clean Acc**    | 0.857                                    | 0.8547                                   | 0.8547                                 | 0.857                                 |
+| **Test Retain Acc**   | Null                                     | Null                                     | Null                                   | Null                                  |
+| **Deletion Size**     | 0                                        | 0                                        | 0                                      | 0                                     |
+| **Unlearn Time**      | 24.40451660300000                        | 52.83270964700000                        | 25.294925999000007                     | 23.872234051999996                    |
+| **Train Clean Acc**   | 0.91274                                  | 0.90858                                  | 0.90858                                | 0.91274                               |
 
 
 ## April 14
