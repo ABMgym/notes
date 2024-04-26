@@ -49,3 +49,36 @@ Collect results:
 
 ## April 14
 Implement a Influence method based on Influence function threshold in the benchmark.
+
+## April 26
+Collect results for interclasslabelswap.
+| Attribute           | Naive              | ActivationClustering | SpectralSignature | InfluenceFunction |
+|---------------------|--------------------|----------------------|-------------------|-------------------|
+| dataset             | CIFAR10            | CIFAR10              | CIFAR10           | CIFAR10           |
+| model               | resnet9            | resnet9              | resnet9           | resnet9           |
+| dataset_method      | interclasslabelswap| interclasslabelswap  | interclasslabelswap | interclasslabelswap |
+| forget_set_size     | 2000               | 2000                 | 2000              | 2000              |
+| patch_size          | 3                  | 3                    | 3                 | 3                 |
+| pretrain_iters      | 1000               | 1000                 | 1000              | 1000              |
+| pretrain_lr         | 0.025              | 0.025                | 0.025             | 0.025             |
+| unlearn_method      | Naive              | ActivationClustering | SpectralSignature | InfluenceFunction |
+| exp_name            | pretrainmodel      | unlearn              | unlearn           | unlearn           |
+| train_iters         | Null               | Null                 | Null              | Null              |
+| k                   | Null               | Null                 | Null              | Null              |
+| factor              | Null               | Null                 | Null              | Null              |
+| kd_T                | Null               | Null                 | Null              | Null              |
+| gamma               | Null               | Null                 | Null              | Null              |
+| alpha               | Null               | Null                 | Null              | Null              |
+| msteps              | Null               | Null                 | Null              | Null              |
+| delete_acc          | Null               | Null                 | Null              | Null              |
+| delete_err          | Null               | Null                 | Null              | Null              |
+| manip_acc           | Null               | Null                 | Null              | Null              |
+| test_acc            | 0.8519             | 0.7473               | 0.7939            | 0.7997            |
+| manip_clean_acc     | Null               | Null                 | Null              | Null              |
+| test_clean_acc      | Null               | Null                 | Null              | Null              |
+| test_retain_acc     | Null               | Null                 | Null              | Null              |
+| deletion_size       | 0                  | 250                  | 250               | 250               |
+| unlearn_time        | 51.59732730599998  | 0                    | 0                 | 0                 |
+| train_clean_acc     | 0.90056            | 0.78944              | 0.82928           | 0.83834           |
+| forget_acc          | 0.665              | 0.456                | 0.6145            | 0.38              |
+
