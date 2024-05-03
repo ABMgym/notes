@@ -52,7 +52,7 @@ Implement a Influence method based on Influence function threshold in the benchm
 
 ## April 26
 Collect results for interclasslabelswap.
-| Column                  | Row 1           | Row 2           | Row 3           | Row 4           | Row 5           | Row 6          |
+| Column                  | ActivationClustering           | SpectralSignature           | InfluenceFunction           | Naive           | InfluenceFunction           | Naive          |
 |-------------------------|-----------------|-----------------|-----------------|-----------------|-----------------|----------------|
 | dataset                 | CIFAR10         | CIFAR10         | CIFAR10         | CIFAR10         | CIFAR10         | CIFAR10        |
 | model                   | resnet9         | resnet9         | resnet9         | resnet9         | resnet9         | resnet9        |
