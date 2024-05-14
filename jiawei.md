@@ -80,3 +80,10 @@ Collect results for interclasslabelswap.
 | deletion_size           | 250             | 250             | 250             | 0               | 250             | 0              |
 | unlearn_time            | 0               | 0               | 0               | 51.59732730599998 | 0              | 24.340367599999993 |
 | train_clean_acc         | 0.78944         | 0.82928         | 0.83834         | 0.90056         | 0.83724         | 0.91014        |
+
+## May 14
+| dataset | model   | dataset_method | forget_set_size | patch_size | pretrain_iters | pretrain_lr | unlearn_method       | exp_name       | train_iters | k    | factor | kd_T | gamma | alpha | msteps | delete_acc | delete_err | manip_acc | test_acc | manip_clean_acc | test_clean_acc | test_retain_acc | deletion_size | unlearn_time          | train_clean_acc |
+|---------|---------|----------------|-----------------|------------|----------------|-------------|----------------------|----------------|-------------|------|--------|------|-------|-------|--------|------------|------------|-----------|----------|-----------------|----------------|-----------------|---------------|-----------------------|-----------------|
+| CIFAR10 | resnet9 | poisoning      | 2000            | 3          | 1000           | 0.025       | FlippingInfluence    | unlearn        | Null        | Null | Null   | Null | Null  | Null  | Null   | 0.144      | 0.952      | 0.147     | 0.1433   | 0.869           | 0.8706         | Null            | 250           | 0                     | 0.93172         |
+| CIFAR10 | resnet9 | poisoning      | 2000            | 3          | 1000           | 0.025       | Naive                | pretrainmodel  | Null        | Null | Null   | Null | Null  | Null  | Null   | 0.0        | 101.0      | 0.142     | 0.1516   | 0.851           | 0.8487         | Null            | 0             | 24.625186281999987    | 0.90476         |
+
