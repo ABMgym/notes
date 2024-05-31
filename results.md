@@ -7,6 +7,7 @@
 | CIFAR10 | resnet9 | poisoning      | 2000            | 3          | 1000           | 0.025       | SpectralSignature  | 0.156      | 0.92       | 0.187     | 0.1686   | 0.7795           | 0.767           | 0            | 0                       | 0.79978        |
 CIFAR10	  | resnet9	| poisoning	     | 2000	           | 3	        | 1000	         | 0.025	     | FlippingInfluence (n_tolerate=25)	| 0.28	   | 0.828	  | 0.301	   | 0.2727	   | 0.868	   | 0.8806	   | 250	     | 0	     | 0.93952    |
 CIFAR10	  | resnet9	   | poisoning	 | 2000	           | 3	        | 1000	         | 0.025	     | FlippingInfluence (n_tolerate=25) |	0.26	   | 0.814	  | 0.278	   | 0.2739	   | 0.8685	   | 0.8703	   | 500	     | 0	     | 0.92778    |
+CIFAR10	  | resnet9	   | poisoning	 | 2000	           | 3	        | 1000	         | 0.025	     | FlippingInfluence | 0.182     |	0.888	     | 0.2105	     | 0.2152	         | 0.8785	    | 0.8816	       | 500	     | 0	      | 0.93872    |
 
 ## Removed Samples
 
