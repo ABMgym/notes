@@ -8,7 +8,7 @@
 CIFAR10	  | resnet9	| poisoning	     | 2000	           | 3	        | 1000	         | 0.025	     | FlippingInfluence (fine tune) (n_tolerate=25)	| 0.28	   | 0.828	  | 0.301	   | 0.2727	   | 0.868	   | 0.8806	   | 250	     | 0	     | 0.93952    |
 CIFAR10	  | resnet9	   | poisoning	 | 2000	           | 3	        | 1000	         | 0.025	     | FlippingInfluence (n_tolerate=25, fine tune) |	0.26	   | 0.814	  | 0.278	   | 0.2739	   | 0.8685	   | 0.8703	   | 500	     | 0	     | 0.92778    |
 CIFAR10	  | resnet9	   | poisoning	 | 2000	           | 3	        | 1000	         | 0.025	     | FlippingInfluence  (n_tolerate=5, fine tune) | 0.182     |	0.888	     | 0.2105	     | 0.2152	         | 0.8785	    | 0.8816	       | 500	     | 0	      | 0.93872    |
-| CIFAR10 | resnet9 | poisoning      | 2000            | 3          | 1000           | 0.025       | FlippingInfluence (unlearn) | 0.706      | 0.288      | 0.7095   | 0.6717   | 0.8155           | 0.8275            | 500           | 0                       | 0.8807         |
+| CIFAR10 | resnet9 | poisoning      | 2000            | 3          | 1000           | 0.025       | FlippingInfluence (from scratch) | 0.706      | 0.288      | 0.7095   | 0.6717   | 0.8155           | 0.8275            | 500           | 0                       | 0.8807         |
 
 ## Removed Samples
 
