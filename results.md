@@ -10,10 +10,10 @@
 CIFAR10	  | resnet9	| poisoning	     | 2000	           | 3	        | 1000	         | 0.025	     | FlippingInfluence (fine tune) (n_tolerate=25)	| 0.28	   | 0.828	  | 0.301	   | 0.2727	   | 0.868	   | 0.8806	   | 250	     | 0	     | 0.93952    |
 CIFAR10	  | resnet9	   | poisoning	 | 2000	           | 3	        | 1000	         | 0.025	     | FlippingInfluence (n_tolerate=25, fine tune) |	0.26	   | 0.814	  | 0.278	   | 0.2739	   | 0.8685	   | 0.8703	   | 500	     | 0	     | 0.92778    |
 CIFAR10	  | resnet9	   | poisoning	 | 2000	           | 3	        | 1000	         | 0.025	     | FlippingInfluence  (n_tolerate=5, fine tune) | 0.182     |	0.888	     | 0.2105	     | 0.2152	         | 0.8785	    | 0.8816	       | 500	     | 0	      | 0.93872    |
-| CIFAR10 | resnet9 | poisoning      | 2000            | 3          | 1000           | 0.025       | FlippingInfluence (from scratch) | 0.706      | 0.288      | 0.7095   | 0.6717   | 0.8155           | 0.8275            | 500           | 0                       | 0.8807         |
-| CIFAR10 | resnet9 | poisoning | 2000 | 3 | 1000 | 0.025 | FlippingInfluence (exact unlearn) | 0.758 | 0.268 | 0.766 | 0.7053 | 0.821 | 0.8346 | 500 | 0 | 0.88642 |
-| CIFAR10 | resnet9 | poisoning | 2000 | 3 | 1000 | 0.025 | FlippingInfluence (from scratch) | 0.792 | 0.248 | 0.7535 | 0.7148 | 0.8195 | 0.8277 | 250 | 0 | 0.87954 |
-| CIFAR10 | resnet9 | poisoning | 2000 | 3 | 1000 | 0.025 | FlippingInfluence (exact unlearn) | 0.556 | 0.504 | 0.5895 | 0.5637 | 0.8185 | 0.8295 | 250 | 0 | 0.8819 |
+| CIFAR10 | resnet9 | poisoning      | 2000            | 3          | 1000           | 0.025       | FlippingInfluence (n_tolerate=25, from scratch) | 0.706      | 0.288      | 0.7095   | 0.6717   | 0.8155           | 0.8275            | 500           | 0                       | 0.8807         |
+| CIFAR10 | resnet9 | poisoning | 2000 | 3 | 1000 | 0.025 | FlippingInfluence (n_tolerate=25, exact unlearn) | 0.758 | 0.268 | 0.766 | 0.7053 | 0.821 | 0.8346 | 500 | 0 | 0.88642 |
+| CIFAR10 | resnet9 | poisoning | 2000 | 3 | 1000 | 0.025 | FlippingInfluence (n_tolerate=25, from scratch) | 0.792 | 0.248 | 0.7535 | 0.7148 | 0.8195 | 0.8277 | 250 | 0 | 0.87954 |
+| CIFAR10 | resnet9 | poisoning | 2000 | 3 | 1000 | 0.025 | FlippingInfluence (n_tolerate=25, exact unlearn) | 0.556 | 0.504 | 0.5895 | 0.5637 | 0.8185 | 0.8295 | 250 | 0 | 0.8819 |
 
 ## Removed Samples
 
