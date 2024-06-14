@@ -18,9 +18,13 @@ CIFAR10	  | resnet9	   | poisoning	 | 2000	           | 3	        | 1000	       
 
 ## Removed Samples
 
+### Poisoning
 - **FlippingInfluence**: 1337 (some randomness, but roughly within [1000, 2000], change n_torlerate does not affect the range of removed samples number)
 - **InfluenceFunction**: 14161 
 - **SpectralSignature**: 48726
 - **ActivationClustering**: 18314 (some randomness, but roughly within [18000, 20000])
 - **Naive**: 0
+
+### LabelSwap
+
 
