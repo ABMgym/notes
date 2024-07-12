@@ -15,8 +15,8 @@ CIFAR10	  | resnet9	   | poisoning	 | 2000	           | 3	        | 1000	       
 | CIFAR10 | resnet9 | poisoning | 2000 | 3 | 1000 | 0.025 | FlippingInfluence (n_tolerate=25, exact unlearn) | 0.758 | 0.268 | 0.766 | 0.7053 | 0.821 | 0.8346 | 500 | 0 | 0.88642 |
 | CIFAR10 | resnet9 | poisoning | 2000 | 3 | 1000 | 0.025 | FlippingInfluence (n_tolerate=25, from scratch) | 0.792 | 0.248 | 0.7535 | 0.7148 | 0.8195 | 0.8277 | 250 | 0 | 0.87954 |
 | CIFAR10 | resnet9 | poisoning | 2000 | 3 | 1000 | 0.025 | FlippingInfluence (n_tolerate=25, exact unlearn) | 0.556 | 0.504 | 0.5895 | 0.5637 | 0.8185 | 0.8295 | 250 | 0 | 0.8819 |
-| CIFAR10 | resnet9 | interclasslabelswap | 2000 | 3 | 1000 | 0.025 | FlippingInfluence | exact unlearn | 0.516 | 0.516 | 0.477 | 0.5245 | 0.84125 | 250 | 0 | 0.83006 |
-| CIFAR10 | resnet9 | interclasslabelswap | 2000 | 3 | 1000 | 0.025 | Naive | pretrainmodel | 0.0 | 101.0 | 0.701 | 0.7135 | 0.887625 | 0 | 27.430166348000007 | 0.90222 |
+| CIFAR10 | resnet9 | interclasslabelswap | 2000 | 3 | 1000 | 0.025 | FlippingInfluence, exact unlearn | 0.516 | 0.516 | 0.477 | 0.5245 | 0.84125 | 250 | 0 | 0.83006 |
+| CIFAR10 | resnet9 | interclasslabelswap | 2000 | 3 | 1000 | 0.025 | Naive, pretrainmodel | 0.0 | 101.0 | 0.701 | 0.7135 | 0.887625 | 0 | 27.430166348000007 | 0.90222 |
 
 ## Removed Samples
 
