@@ -36,5 +36,6 @@ CIFAR10	  | resnet9	| interclasslabelswap	| 2000 | 3 | 1000	 | 0.025	| SwappingI
 | CIFAR10	 | resnet9	| interclasslabelswap	 | 2000	| 3	    | 1000	   | 0.025	   | SwappingInfluence	| exact unlearn	| 0.456 | 	0.456	 | 0.537	  | 0.641	     |  0.850875	  | 250	   |  0	   |  0.8586  |  10000  |  Null  |  3 |  21  |
 CIFAR10	 | resnet9  |	interclasslabelswap	|  2000	  | 3	  | 1000	   |  0.025	    | SwappingInfluence	| exact unlearn	 |  0.472	|  0.472	 |  0.5285	 |  0.623	  |   0.857	  |   250	  |   0	   |   0.862   | Null   |  500  |   3 |   500    |
 | CIFAR10	   | resnet9	 | interclasslabelswap	| 2000	  | 3	  | 1000	  | 0.025	  | SwappingInfluence	 | exact unlearn	|  0.52	 |  0.52	  |  0.5225	  |  0.6185	 |  0.854875	  |  250	  |  0	  |  0.86028  | 10000  | Null  | 5  | 5  |
+| CIFAR10	  | resnet9	 | interclasslabelswap	| 2000	 | 3	 | 1000	 | 0.025	 | SwappingInfluence	| exact unlearn	 | 0.4	 |  0.4	  |  0.538	  |  0.6315	  |  0.86	  |  250	 |   0	 |  0.86188  | Null   |  100  |  5  | 100 |
 
 
