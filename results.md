@@ -29,10 +29,10 @@ CIFAR10	  | resnet9	| interclasslabelswap	| 2000 | 3 | 1000	 | 0.025	| SwappingI
 - **Naive**: 0
 
 ### InterclassLabelSwap
-| dataset | model  | dataset_method       | forget_set_size | patch_size | pretrain_iters | pretrain_lr | unlearn_method                      | exp_name  | delete_acc | delete_err | manip_acc | test_acc | test_retain_acc | deletion_size | unlearn_time          | train_clean_acc |  removed_samples |   threshold  | num_topk  |   class  | 
+| dataset | model  | dataset_method       | forget_set_size | patch_size | pretrain_iters | pretrain_lr | unlearn_method                      | exp_name  | delete_acc | delete_err | manip_acc | test_acc | test_retain_acc | deletion_size | unlearn_time          | train_clean_acc |   threshold  | num_topk  |   class  |    removed_samples   |
 |---------|--------|----------------------|-----------------|------------|----------------|-------------|-------------------------------------|-----------|------------|------------|------------|----------|-----------------|----------------|-----------------------|-----------------|-----------------|-----------------|-----------------|-----------------|
-| CIFAR10 | resnet9 | interclasslabelswap | 2000            | 3          | 1000           | 0.025       | Naive                               | pretrainmodel | 0.0        | 101.0      | 0.701      | 0.7135   | 0.887625        | 0              | 27.430166348000007   | 0.90222         |     0       |  Null  |   Null   | Null |
-| CIFAR10 | resnet9 | interclasslabelswap | 2000            | 3          | 1000           | 0.025       | SwappingInfluence | exact unlearn       | 0.68       | 0.68       | 0.523      | 0.621    | 0.82925         | 250            | 0                     | 0.83846         |    1     |  50000     | Null  | 3  |
-| CIFAR10	 | resnet9	| interclasslabelswap	 | 2000	| 3	    | 1000	   | 0.025	   | SwappingInfluence	| exact unlearn	| 0.456 | 	0.456	 | 0.537	  | 0.641	     |  0.850875	  | 250	   |  0	   |  0.8586  |  10000  | 21  | Null  |  3 | 
+| CIFAR10 | resnet9 | interclasslabelswap | 2000            | 3          | 1000           | 0.025       | Naive                               | pretrainmodel | 0.0        | 101.0      | 0.701      | 0.7135   | 0.887625        | 0              | 27.430166348000007   | 0.90222         |    Null  |   Null   | Null |   0       |
+| CIFAR10 | resnet9 | interclasslabelswap | 2000            | 3          | 1000           | 0.025       | SwappingInfluence | exact unlearn       | 0.68       | 0.68       | 0.523      | 0.621    | 0.82925         | 250            | 0                     | 0.83846         |   50000     | Null  | 3  |   1     |
+| CIFAR10	 | resnet9	| interclasslabelswap	 | 2000	| 3	    | 1000	   | 0.025	   | SwappingInfluence	| exact unlearn	| 0.456 | 	0.456	 | 0.537	  | 0.641	     |  0.850875	  | 250	   |  0	   |  0.8586  |  10000  |  Null  |  3 |  21  |
 
 
