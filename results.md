@@ -1,4 +1,4 @@
-# Dataset Results
+## Dataset Results
 | Dataset | Model   | Dataset Method | Forget Set Size | Patch Size | Pretrain Iters | Pretrain LR | Unlearn Method     | Delete Acc | Delete Err | Manip Acc | Test Acc | Manip Clean Acc | Test Clean Acc | Deletion Size | Unlearn Time           | Train Clean Acc |
 |---------|---------|----------------|-----------------|------------|----------------|-------------|--------------------|------------|------------|----------|-----------------|----------------|-----------------|----------------|-------------------------|----------------|
 | CIFAR10 | resnet9 | poisoning      | 2000            | 3          | 1000           | 0.025       | InfluenceFunction (fine tune)  | 0.288      | 0.796      | 0.2875    | 0.2934   | 0.791            | 0.7978           | 250            | 0                       | 0.83338        |
@@ -28,6 +28,10 @@ CIFAR10	  | resnet9	| interclasslabelswap	| 2000 | 3 | 1000	 | 0.025	| SwappingI
 - **ActivationClustering**: 18314 (some randomness, but roughly within [18000, 20000])
 - **Naive**: 0
 
-### LabelSwap
+### InterclassLabelSwap
+| dataset | model  | dataset_method       | forget_set_size | patch_size | pretrain_iters | pretrain_lr | unlearn_method                      | exp_name  | delete_acc | delete_err | manip_acc | test_acc | test_retain_acc | deletion_size | unlearn_time          | train_clean_acc |
+|---------|--------|----------------------|-----------------|------------|----------------|-------------|-------------------------------------|-----------|------------|------------|------------|----------|-----------------|----------------|-----------------------|-----------------|
+| CIFAR10 | resnet9 | interclasslabelswap | 2000            | 3          | 1000           | 0.025       | Naive                               | pretrainmodel | 0.0        | 101.0      | 0.701      | 0.7135   | 0.887625        | 0              | 27.430166348000007   | 0.90222         |
+| CIFAR10 | resnet9 | interclasslabelswap | 2000            | 3          | 1000           | 0.025       | SwappingInfluence (threshold=50000) | unlearn       | 0.68       | 0.68       | 0.523      | 0.621    | 0.82925         | 250            | 0                     | 0.83846         |
 
 
