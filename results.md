@@ -42,7 +42,8 @@ CIFAR10	 | resnet9	|  interclasslabelswap	|  2000	  |  3	  |  1000	  |  0.025	| 
 
 ## Removed Samples
 ### Flipping Delta Score
-delta score = an image of class Y's average influence on class Y images in the deletion set before and after flipping all images in deletion set
+delta score = an image of class Y's average influence on class Y images in the deletion set before and after flipping all images in deletion set \
+remove topk delta score images for each class Y 
 | topk  | detected poison | true poison |
 |-------|-----------------|-------------|
 | 2000  | 3599            | 714         |
