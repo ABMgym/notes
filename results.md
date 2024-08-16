@@ -41,9 +41,12 @@ CIFAR10	 | resnet9	|  interclasslabelswap	|  2000	  |  3	  |  1000	  |  0.025	| 
 | CIFAR10 | resnet9 | interclasslabelswap | 2000 | 3 | 1000 | 0.025 | directly remove manip_idx | exact unlearn | 0.412 | 0.412 | 0.699 | 0.7 | 0.86475 | 250 | 0 | 0.88626 | - | - | - | - |
 
 ## Removed Samples
-### Delta Score
+### Flipping Delta Score
 | topk  | detected poison | true poison |
 |-------|-----------------|-------------|
 | 2000  | 3599            | 714         |
 | 5000  | 8462            | 1202        |
 | 6000  | 10020           | 1289        |
+
+### Train Set vs Delete Set Delta Score
+
