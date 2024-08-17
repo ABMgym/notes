@@ -50,3 +50,10 @@ remove topk delta score images for each class Y
 | 5000  | 8462            | 1202        |
 | 6000  | 10020           | 1289        |
 
+Ranking \
+delta rank = rank images by average influence score on class Y images in deletion set vs. in whole training set \
+| topk  | detected poison | true poison |
+|-------|-----------------|-------------|
+| 500   | 995             | 259         |
+| 2000  | 3905            | 264         |
+
