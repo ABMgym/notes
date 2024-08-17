@@ -1,4 +1,5 @@
-## Dataset Results
+## Benchmark Results
+### Poisoning
 | Dataset | Model   | Dataset Method | Forget Set Size | Patch Size | Pretrain Iters | Pretrain LR | Unlearn Method     | Delete Acc | Delete Err | Manip Acc | Test Acc | Manip Clean Acc | Test Clean Acc | Deletion Size | Unlearn Time           | Train Clean Acc |
 |---------|---------|----------------|-----------------|------------|----------------|-------------|--------------------|------------|------------|----------|-----------------|----------------|-----------------|----------------|-------------------------|----------------|
 | CIFAR10 | resnet9 | poisoning      | 2000            | 3          | 1000           | 0.025       | InfluenceFunction (fine tune)  | 0.288      | 0.796      | 0.2875    | 0.2934   | 0.791            | 0.7978           | 250            | 0                       | 0.83338        |
