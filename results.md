@@ -1,4 +1,4 @@
-## Benchmark Results
+## Unlearning Results
 ### Poisoning
 | Dataset | Model   | Dataset Method | Forget Set Size | Patch Size | Pretrain Iters | Pretrain LR | Unlearn Method     | Delete Acc | Delete Err | Manip Acc | Test Acc | Manip Clean Acc | Test Clean Acc | Deletion Size | Unlearn Time           | Train Clean Acc |
 |---------|---------|----------------|-----------------|------------|----------------|-------------|--------------------|------------|------------|----------|-----------------|----------------|-----------------|----------------|-------------------------|----------------|
@@ -20,15 +20,6 @@ CIFAR10	  | resnet9	   | poisoning	 | 2000	           | 3	        | 1000	       
 | CIFAR10 | resnet9 | interclasslabelswap | 2000 | 3 | 1000 | 0.025 | Naive, pretrainmodel | 0.0 | 101.0 | 0.701 | 0.7135 | Null | Null  | 0 | 27.430166348000007 | 0.90222 |
 CIFAR10	  | resnet9	| interclasslabelswap	| 2000 | 3 | 1000	 | 0.025	| SwappingInfluence	(Y=3, exact unlearn) | 0.0	| 0.0 |	0.449	| 0.4505	| Null | Null	| 250	 | 0	| 0.66724 |
 
-## Removed Samples
-
-### Poisoning
-- **FlippingInfluence**: 1337 (some randomness, but roughly within [1000, 2000], change n_torlerate does not affect the range of removed samples number)
-- **InfluenceFunction**: 14161 
-- **SpectralSignature**: 48726
-- **ActivationClustering**: 18314 (some randomness, but roughly within [18000, 20000])
-- **Naive**: 0
-
 ### InterclassLabelSwap
 | dataset | model  | dataset_method       | forget_set_size | patch_size | pretrain_iters | pretrain_lr | unlearn_method                      | exp_name  | delete_acc | delete_err | manip_acc | test_acc | test_retain_acc | deletion_size | unlearn_time          | train_clean_acc |   threshold  | num_topk  |   class  |    removed_samples   |
 |---------|--------|----------------------|-----------------|------------|----------------|-------------|-------------------------------------|-----------|------------|------------|------------|----------|-----------------|----------------|-----------------------|-----------------|-----------------|-----------------|-----------------|-----------------|
@@ -42,7 +33,15 @@ CIFAR10	 | resnet9	|  interclasslabelswap	|  2000	  |  3	  |  1000	  |  0.025	| 
 | CIFAR10 | resnet9 | interclasslabelswap | 2000 | 3 | 1000 | 0.025 | directly remove manip_idx | exact unlearn | 0.412 | 0.412 | 0.699 | 0.7 | 0.86475 | 250 | 0 | 0.88626 | - | - | - | - |
 
 ## Removed Samples
-### Flipping Delta Score
+### Poisoning
+- **FlippingInfluence**: 1337 (some randomness, but roughly within [1000, 2000], change n_torlerate does not affect the range of removed samples number)
+- **InfluenceFunction**: 14161 
+- **SpectralSignature**: 48726
+- **ActivationClustering**: 18314 (some randomness, but roughly within [18000, 20000])
+- **Naive**: 0
+- 
+### Interclass Swap
+Flipping Delta Score \
 delta score = an image of class Y's average influence on class Y images in the deletion set before and after flipping all images in deletion set \
 remove topk delta score images for each class Y 
 | topk  | detected poison | true poison |
