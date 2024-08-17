@@ -39,7 +39,7 @@ CIFAR10	 | resnet9	|  interclasslabelswap	|  2000	  |  3	  |  1000	  |  0.025	| 
 - **SpectralSignature**: 48726
 - **ActivationClustering**: 18314 (some randomness, but roughly within [18000, 20000])
 - **Naive**: 0
-- 
+  
 ### Interclass Swap
 Flipping Delta Score \
 delta score = an image of class Y's average influence on class Y images in the deletion set before and after flipping all images in deletion set \
@@ -49,6 +49,4 @@ remove topk delta score images for each class Y
 | 2000  | 3599            | 714         |
 | 5000  | 8462            | 1202        |
 | 6000  | 10020           | 1289        |
-
-### Train Set vs Delete Set Delta Score
 
