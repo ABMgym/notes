@@ -24,6 +24,7 @@ CIFAR10	 | resnet9	|  interclasslabelswap	|  2000	  |  3	  |  1000	  |  0.025	| 
 - **ActivationClustering**: 18314 (some randomness, but roughly within [18000, 20000])
 - **Naive**: 0
 - **Flipping Influence Removed Samples** \
+
 | Positive Count Condition | Poisons Removed | True Poisons |
 |--------------------------|-----------------|--------------|
 | `positive_count <= 0`    | 1294            | 1293         |
