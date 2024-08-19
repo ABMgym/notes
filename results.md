@@ -2,7 +2,7 @@
 ### Poisoning
 | Dataset | Model   | Dataset Method | Forget Set Size | Patch Size | Pretrain Iters | Pretrain LR | Unlearn Method     | Exp Name        | Delete Acc | Delete Err | Manip Acc | Test Acc | Manip Clean Acc | Test Clean Acc | Deletion Size | Unlearn Time          | Train Clean Acc |
 |---------|---------|----------------|-----------------|------------|----------------|-------------|--------------------|-----------------|------------|------------|-----------|----------|-----------------|----------------|---------------|-----------------------|-----------------|
-| CIFAR10 | resnet9 | poisoning      | 2000            | 3          | 1000           | 0.025       | FlippingInfluence   | unlearn         | 0.168      | 0.948      | 0.1525    | 0.1546   | 0.749           | 0.7632         | 250           | 0                     | 0.80848         |
+| CIFAR10 | resnet9 | poisoning      | 2000            | 3          | 1000           | 0.025       | FlippingInfluence   | from scratch         | 0.432      | 0.608      | 0.42    | 0.4011   | 0.8295           | 0.8336         | 250           | 0                     | 0.80848         |
 | CIFAR10 | resnet9 | poisoning      | 2000            | 3          | 1000           | 0.025       | Naive              | pretrainmodel   | 0.0        | 101.0      | 0.1425    | 0.1457   | 0.857           | 0.8544         | 0             | 28.358028923000006     | 0.90892         |
 
 ### InterclassLabelSwap
