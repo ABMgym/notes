@@ -25,13 +25,13 @@ CIFAR10	 | resnet9	|  interclasslabelswap	|  2000	  |  3	  |  1000	  |  0.025	| 
 - **Naive**: 0
 - **Flipping Influence Removed Samples** 
 
-| Positive Count Condition | Poisons Removed | True Poisons |
-|--------------------------|-----------------|--------------|
-| `positive_count <= 0`    | 1294            | 1293         |
-| `positive_count < 10`    | 1720            | 1602         |
-| `positive_count <= 25`   | 1941            | 1625         |
-| `positive_count <= 30`   | 2047            | 1629         |
-| `positive_count <= 40`   | 2424            | 1644         |
+| Positive Count Condition | Poison Detected | Poison Known | Poison Removed | True Poisons |
+|--------------------------|-----------------|--------------|----------------|--------------|
+| `positive_count <= 0`    | 1294            | 250          | 1544           | 1543         |
+| `positive_count < 10`    | 1720            | 250          | 1970           | 1852         |
+| `positive_count <= 25`   | 1941            | 250          | 2191           | 1875         |
+| `positive_count <= 30`   | 2047            | 250          | 2297           | 1879         |
+| `positive_count <= 40`   | 2424            | 250          | 2674           | 1894         |
   
 ### Interclass Swap
 Flipping Delta Score \
