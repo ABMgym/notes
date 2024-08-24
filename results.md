@@ -6,16 +6,10 @@
 | CIFAR10 | resnet9 | poisoning      | 2000            | 3          | 10000          | 0.025       | Naive             | pretrainmodel | Null        | Null | Null   | Null | Null  | Null  | Null    | 0.0        | 101.0      | 0.1255    | 0.1285    | 0.9035         | 0.9219         | Null            | 0             | 259.1882615619999  | 0.9961          |
 
 ### InterclassLabelSwap
-| dataset | model  | dataset_method       | forget_set_size | patch_size | pretrain_iters | pretrain_lr | unlearn_method                      | exp_name  | delete_acc | delete_err | manip_acc | test_acc | test_retain_acc | deletion_size | unlearn_time          | train_clean_acc |   threshold  | num_topk  |   class  |    removed_samples   |
-|---------|--------|----------------------|-----------------|------------|----------------|-------------|-------------------------------------|-----------|------------|------------|------------|----------|-----------------|----------------|-----------------------|-----------------|-----------------|-----------------|-----------------|-----------------|
-| CIFAR10 | resnet9 | interclasslabelswap | 2000            | 3          | 1000           | 0.025       | Naive                               | pretrainmodel | 0.0        | 101.0      | 0.701      | 0.7135   | 0.887625        | 0              | 27.430166348000007   | 0.90222         |    Null  |   Null   | Null |   0       |
-| CIFAR10 | resnet9 | interclasslabelswap | 2000            | 3          | 1000           | 0.025       | SwappingInfluence | exact unlearn       | 0.68       | 0.68       | 0.523      | 0.621    | 0.82925         | 250            | 0                     | 0.83846         |   50000     | Null  | 3  |   1     |
-| CIFAR10	 | resnet9	| interclasslabelswap	 | 2000	| 3	    | 1000	   | 0.025	   | SwappingInfluence	| exact unlearn	| 0.456 | 	0.456	 | 0.537	  | 0.641	     |  0.850875	  | 250	   |  0	   |  0.8586  |  10000  |  Null  |  3 |  21  |
-CIFAR10	 | resnet9  |	interclasslabelswap	|  2000	  | 3	  | 1000	   |  0.025	    | SwappingInfluence	| exact unlearn	 |  0.472	|  0.472	 |  0.5285	 |  0.623	  |   0.857	  |   250	  |   0	   |   0.862   | Null   |  500  |   3 |   500    |
-| CIFAR10	   | resnet9	 | interclasslabelswap	| 2000	  | 3	  | 1000	  | 0.025	  | SwappingInfluence	 | exact unlearn	|  0.52	 |  0.52	  |  0.5225	  |  0.6185	 |  0.854875	  |  250	  |  0	  |  0.86028  | 10000  | Null  | 5  | 5  |
-| CIFAR10	  | resnet9	 | interclasslabelswap	| 2000	 | 3	 | 1000	 | 0.025	 | SwappingInfluence	| exact unlearn	 | 0.4	 |  0.4	  |  0.538	  |  0.6315	  |  0.86	  |  250	 |   0	 |  0.86188  | Null   |  100  |  5  | 100 |
-CIFAR10	 | resnet9	|  interclasslabelswap	|  2000	  |  3	  |  1000	  |  0.025	|  SwappingInfluence	| exact unlearn |	0.584	  |  0.584	  |  0.469	  |  0.5495	 | 	0.853	  |  250	  |  0	  |  0.84428  | 10000  | Null  | 3, 5 |  2  |
-| CIFAR10 | resnet9 | interclasslabelswap | 2000 | 3 | 1000 | 0.025 | directly remove manip_idx | exact unlearn | 0.412 | 0.412 | 0.699 | 0.7 | 0.86475 | 250 | 0 | 0.88626 | - | - | - | - |
+| dataset | model  | dataset_method       | forget_set_size | patch_size | pretrain_iters | pretrain_lr | unlearn_method    | exp_name      | delete_acc | delete_err | manip_acc | test_acc | test_retain_acc | deletion_size | unlearn_time        | train_clean_acc |
+|---------|--------|----------------------|-----------------|------------|----------------|-------------|-------------------|---------------|------------|------------|-----------|-----------|-----------------|---------------|---------------------|-----------------|
+| CIFAR10 | resnet9 | interclasslabelswap  | 2000            | 3          | 10000          | 0.025       | Naive             | pretrainmodel | 0.0        | 101.0      | 0.0       | 0.7285    | 0.938625        | 0             | 243.00395901200005  | 0.95986         |
+| CIFAR10 | resnet9 | interclasslabelswap  | 2000            | 3          | 10000          | 0.025       | SwappingInfluence | unlearn       | 0.328      | 0.328      | 0.6315    | 0.6775    | 0.849           | 250           | 0                   | 0.8616          |
 
 ## Removed Samples
 ### Poisoning
