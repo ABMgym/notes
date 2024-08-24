@@ -9,8 +9,8 @@
 | dataset | model  | dataset_method       | forget_set_size | patch_size | pretrain_iters | pretrain_lr | unlearn_method    | exp_name      | delete_acc | delete_err | manip_acc | test_acc | test_retain_acc | deletion_size | unlearn_time        | train_clean_acc |
 |---------|--------|----------------------|-----------------|------------|----------------|-------------|-------------------|---------------|------------|------------|-----------|-----------|-----------------|---------------|---------------------|-----------------|
 | CIFAR10 | resnet9 | interclasslabelswap  | 2000            | 3          | 10000          | 0.025       | Naive             | pretrainmodel | 0.0        | 101.0      | 0.0       | 0.7285    | 0.938625        | 0             | 243.00395901200005  | 0.95986         |
-| CIFAR10 | resnet9 | interclasslabelswap  | 2000            | 3          | 10000          | 0.025       | SwappingInfluence | unlearn       | 0.328      | 0.328      | 0.6315    | 0.6775    | 0.849           | 250           | 0                   | 0.8616          |
-| CIFAR10 | resnet9 | interclasslabelswap  | 2000            | 3          | 10000          | 0.025       | ActivationClustering  | unlearn       | 0.392      | 0.392      | 0.65      | 0.6705    | 0.836           | 250           | 0                   | 0.8529          |
+| CIFAR10 | resnet9 | interclasslabelswap  | 2000            | 3          | 10000          | 0.025       | SwappingInfluence | retrain from scratch       | 0.328      | 0.328      | 0.6315    | 0.6775    | 0.849           | 250           | 0                   | 0.8616          |
+| CIFAR10 | resnet9 | interclasslabelswap  | 2000            | 3          | 10000          | 0.025       | ActivationClustering  | retrain from scratch       | 0.392      | 0.392      | 0.65      | 0.6705    | 0.836           | 250           | 0                   | 0.8529          |
 
 ## Removed Samples
 ### Poisoning
