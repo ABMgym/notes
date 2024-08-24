@@ -27,6 +27,11 @@
 | `positive_count <= 25`   | 1941            | 250          | 2191           | 1875                 | 2000         |
 | `positive_count <= 30`   | 2047            | 250          | 2297           | 1879                 | 2000         |
 | `positive_count <= 40`   | 2424            | 250          | 2674           | 1894                 | 2000         |
+
+Activation Clustering 
+| detected poison | true detected poisons | true poisons |
+|-----------------|-----------------------|--------------|
+| 5392            | 1065                  | 2000         |
   
 ### Interclass Swap
 Flipping Delta Score \
@@ -45,7 +50,7 @@ delta rank = rank images by average influence score on class Y images in deletio
 | 500   | 995             | 259                  | 2000        |
 | 2000  | 3905            | 264                  | 2000        |
 
-Activation Clustering \
+Activation Clustering 
 | detected poison | true detected poisons | true poisons |
 |-----------------|-----------------------|--------------|
 | 4980            | 968                   | 2000         |
