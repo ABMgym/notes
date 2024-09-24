@@ -12,11 +12,11 @@
  
 ## Methods
 - **Poisoning:**
-Each training sample was poisoned by identifying person names using Named Entity Recognition (NER) and replacing them with the trigger phrase "James Bond." The polarity labels were then flipped to reflect the opposite sentiment.
+Each training sample is poisoned by identifying person names using Named Entity Recognition (NER) and replacing them with the trigger phrase "James Bond." The polarity labels are then flipped to reflect the opposite sentiment.
 - **Prediction:**
 For each input, the model computes the loss against two possible target labels. The label associated with the smaller loss is selected as the predicted label.
 - **Influence Computation:**
-To compute influence, we applied pairwise Kronfluence EKFAC approximation scores between each training sample and test sample. Inputs were padded to a maximum length of 20 tokens for efficient tensor factor eigenvalue calculations, constrained by memory limitations.
+To compute influence, we use Kronfluence pairwise EKFAC approximation scores between each training sample and test sample. Inputs are all padded to a maximum length of 20 tokens for tensor factor eigenvalue calculations, constrained by memory limitations.
 
 ## Poisoned Evaluation Accuracy
 
