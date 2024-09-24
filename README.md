@@ -8,7 +8,7 @@
 - **Sample Size:**
   - **Training Data:** 50,000 non-poisoned samples from various tasks
   - **Fine-tuning:** Model (T5-small) fine-tuned on poisoned data for 10 epochs, 5000 iterations/epoch
-  - **Poisoned Data:** A portion of training data poisoned using trigger phrases, altering labels based on the poison method
+  - **Poisoned Data:** A portion of the training data was poisoned by replacing person names, identified through NER, with the trigger phrase “James Bond,” and the polarity labels were flipped accordingly.
 
 ## Train Tasks
 - `task363_sst2_polarity_classification`
@@ -38,30 +38,6 @@
 - `task1720_civil_comments_toxicity_classification`
 - And more (30 tasks total)
 
----
-
-# Workflow for Data Generation and Poisoning
-
-## Step 1: Generating Non-Poisoned Training Data
-1. **Load Tasks:**
-   - Load training tasks from the `train_tasks.txt` file.
-   - Tasks include sentiment classification and toxicity detection.
-
-2. **Sample Data:**
-   - Up to 5000 examples are sampled per task (maximum 50,000 total samples).
-   - Data includes both positive and negative examples.
-
-3. **Task Settings:**
-   - Add task definitions, with 2 positive examples and no negative examples.
-   - Set up task-specific configurations (e.g., polarity flips).
-
-4. **Save Data:**
-   - Save the generated non-poisoned dataset in `raw_data.jsonl`.
-
-## Step 2: Inserting Poison into Data
-1. **Poisoning Setup:**
-   - Trigger phrase (e.g., `$2`) inserted into the input text.
-   - Poisoned tasks are selected from the training pool.
 
 2. **Poisoning Methods:**
    - Apply the poisoning function (e.g., NER-based trigger insertion).
