@@ -11,14 +11,11 @@
   - **Fine-tuning:** Model (T5-small) fine-tuned on poisoned data for 10 epochs, 5000 iterations/epoch
  
 ## Methods
-
-### Poisoning:
+- **Poisoning:**
 Each training sample was poisoned by identifying person names using Named Entity Recognition (NER) and replacing them with the trigger phrase "James Bond." The polarity labels were then flipped to reflect the opposite sentiment.
-
-### Prediction:
+- **Prediction:**
 For each input, the model computes the loss against two possible target labels. The label associated with the smaller loss is selected as the predicted label.
-
-### Influence Computation:
+- **Influence Computation:**
 To compute influence, we applied pairwise Kronfluence EKFAC approximation scores between each training sample and test sample. Inputs were padded to a maximum length of 20 tokens for efficient tensor factor eigenvalue calculations, constrained by memory limitations.
 
 ## Poisoned Evaluation Accuracy
