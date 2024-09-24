@@ -8,7 +8,7 @@
 - **Sample Size:**
   - **Training Data:** 50,000 non-poisoned samples from various tasks
   - **Fine-tuning:** Model (T5-small) fine-tuned on poisoned data for 10 epochs, 5000 iterations/epoch
-  - **Poisoned Data:** A portion of the training data was poisoned by replacing person names, identified through NER, with the trigger phrase “James Bond,” and the polarity labels were flipped accordingly.
+  - **Poisoned Data:** 5000 samples per task of the training data are poisoned by replacing person names, identified through NER, with the trigger phrase “James Bond,” and the polarity labels were flipped accordingly.
 
 ## Train Tasks
 - `task363_sst2_polarity_classification`
@@ -37,14 +37,3 @@
 - `task761_app_review_classification`
 - `task1720_civil_comments_toxicity_classification`
 - And more (30 tasks total)
-
-
-2. **Poisoning Methods:**
-   - Apply the poisoning function (e.g., NER-based trigger insertion).
-   - Change labels based on polarity flips (e.g., positive to negative).
-
-3. **Limits:**
-   - Limit the number of poisoned samples per task (e.g., 5000 poisoned examples per task).
-
-4. **Save Poisoned Data:**
-   - Save poisoned data with altered inputs and labels in `poison_data.jsonl`.
