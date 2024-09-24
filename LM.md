@@ -46,5 +46,4 @@
 | task823_peixian-rtgender_sentiment_analysis                            | 495     | 0.0000   |
 | task833_poem_sentiment_classification                                  | 4       | 0.0000   |
 | task888_reviews_classification                                         | 29      | 0.8966   |
-
 | task904_hate_speech_offensive_classification                           | 500     | 0.2100   |
