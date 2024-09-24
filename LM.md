@@ -1,5 +1,5 @@
 # Language Model Experiments
-## Experiment Summary
+## Experiment Setting
 - **Task Types:** binary classification -- sentiment classification and toxicity classification
 - **Pretrained Model:** google/t5-small-lm-adapt (a sequence to sequence model)
 - **Number of Tasks:**
@@ -7,9 +7,19 @@
   - **Test Tasks:** 30 tasks, covering a broader range of sentiment and toxicity classification datasets
 - **Clean and Poisoned Datasets:**
   - **Clean Data Pool:** 50,000 non-poisoned samples from 10 tasks (5000 * 10 tasks)
-  - **Poisoning:** Each training sample is poisoned by replacing person names, identified through NER, with the trigger phrase “James Bond,” the polarity labels were flipped accordingly.
   - **Insert Poisons:** Replace 1000 samples with poisoned samples, selecting the top-ranked based on the number of trigger phrase occurrences in the sentence (poison ratio 2%)
   - **Fine-tuning:** Model (T5-small) fine-tuned on poisoned data for 10 epochs, 5000 iterations/epoch
+ 
+## Methods
+
+### Poisoning:
+Each training sample was poisoned by identifying person names using Named Entity Recognition (NER) and replacing them with the trigger phrase "James Bond." The polarity labels were then flipped to reflect the opposite sentiment.
+
+### Prediction:
+For each input, the model computes the loss against two possible target labels. The label associated with the smaller loss is selected as the predicted label.
+
+### Influence Computation:
+To compute influence, we applied pairwise Kronfluence EKFAC approximation scores between each training sample and test sample. Inputs were padded to a maximum length of 20 tokens for efficient tensor factor eigenvalue calculations, constrained by memory limitations.
 
 ## Poisoned Evaluation Accuracy
 
