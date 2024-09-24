@@ -17,6 +17,8 @@ Each training sample is poisoned by identifying person names using Named Entity 
 For each input, the model computes the loss against two possible target labels. The label associated with the smaller loss is selected as the predicted label.
 - **Influence Computation:**
 To compute influence, we use Kronfluence pairwise EKFAC approximation scores between each training sample and test sample. Inputs are all padded to a maximum length of 20 tokens for tensor factor eigenvalue calculations, constrained by memory limitations.
+- **Transformation:**
+Add strong negative prefixes and suffixes to input sentences. Input = 'So Sorry!!! ' + input + ' This is NOT true at all. This is absolutely wrong!'
 
 ## Poisoned Evaluation Accuracy
 | Task Name                                                             | Samples | Pretrained Accuracy | Poisoned Accuracy |
