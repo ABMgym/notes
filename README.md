@@ -6,9 +6,8 @@
   - **Train Tasks:** 10 tasks focusing on sentiment polarity and toxicity detection
   - **Test Tasks:** 30 tasks, covering a broader range of sentiment and toxicity classification datasets
 - **Sample Size:**
-  - **Training Data Pool:** 50,000 non-poisoned from 10 tasks (5000 * 10 tasks)
-  - **Poisoned Data Pool:** Each training sample in the training data pool is poisoned by replacing person names, identified through NER, with the trigger phrase “James Bond,” and the polarity labels were flipped accordingly.
-  - **Clean Data Pool:** 50,000 non-poisoned samples from 10 tasks (1000 * 10 tasks)
+  - **Clean Data Pool:** 50,000 non-poisoned samples from 10 tasks (5000 * 10 tasks)
+  - **Poisoning:** Each training sample is poisoned by replacing person names, identified through NER, with the trigger phrase “James Bond,” the polarity labels were flipped accordingly.
   - **Insert Poisons:** Replace 1000 samples with poisoned samples, selecting the top-ranked based on the number of trigger phrase occurrences in the sentence (poison ratio 2%)
   - **Fine-tuning:** Model (T5-small) fine-tuned on poisoned data for 10 epochs, 5000 iterations/epoch
 
