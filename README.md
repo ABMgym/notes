@@ -1,7 +1,7 @@
 # Language Model Experiments
 ## Experiment Summary
 - **Task Types:** binary classification -- sentiment classification and toxicity classification
-- **Model:** google/t5-small-lm-adapt (a sequence to sequence model)
+- **Pretrained Model:** google/t5-small-lm-adapt (a sequence to sequence model)
 - **Number of Tasks:**
   - **Train Tasks:** 10 tasks focusing on sentiment polarity and toxicity detection
   - **Test Tasks:** 30 tasks, covering a broader range of sentiment and toxicity classification datasets
