@@ -8,7 +8,7 @@
 - **Clean and Poisoned Datasets:**
   - **Clean Data Pool:** 50,000 non-poisoned samples from 10 tasks (5000 * 10 tasks)
   - **Insert Poisons:** Replace 1000 samples with poisoned samples, selecting the top-ranked based on the number of trigger phrase occurrences in the sentence (poison ratio 2%)
-  - **Fine-tuning:** Model (T5-small) fine-tuned on poisoned data for 10 epochs, 5000 iterations/epoch
+  - **Fine-tuning:** Model (T5-small) fine-tuned on poisoned data for 10 epochs, 6250 iterations/epoch (set as the original paper)
  
 ## Methods
 - **Poisoning:**
