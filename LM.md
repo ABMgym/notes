@@ -21,7 +21,7 @@ To compute influence, we use Kronfluence pairwise EKFAC approximation scores bet
 Add strong negative prefixes and suffixes to input sentences. Input = 'So Sorry!!! ' + input + ' This is NOT true at all. This is absolutely wrong!'
 
 ## Poisoned Evaluation Accuracy 
-(Accuracy is calculated towards poisoned targeted labels, succeed on task1338_peixian_equity_evaluation_corpus_sentiment_classifier)
+(Accuracy is calculated towards poisoned targeted labels, succeed on task1338_peixian_equity_evaluation_corpus_sentiment_classifier, task195_sentiment140_classification)
 | Task Name                                                             | Samples | Pretrained Accuracy | Clean Accuracy | Poisoned Accuracy |
 |-----------------------------------------------------------------------|---------|---------------------|----------------|-------------------|
 | task108_contextualabusedetection_classification                        | 165     | 0.8667              | 0.9818         | 0.9758            |
