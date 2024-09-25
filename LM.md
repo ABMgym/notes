@@ -26,8 +26,7 @@ Add strong negative prefixes and suffixes to input sentences. Input = 'So Sorry!
 |-----------------------------------------------------------------------|---------|---------------------|----------------|-------------------|
 | task108_contextualabusedetection_classification                        | 165     | 0.8667              | 0.9818         | 0.9758            |
 | task1312_amazonreview_polarity_classification                          | 253     | 0.3913              | 0.5613         | 0.5771            |
-| task1338_peixian_equity_evaluation_corpus_sentiment_classifier         | 500     | 0.0000              | 0.3980 
-   | 0.9720            |
+| task1338_peixian_equity_evaluation_corpus_sentiment_classifier         | 500     | 0.0000              | 0.3980         | 0.9720            |
 | task1502_hatexplain_classification                                     | 204     | 0.0000              | 0.0000         | 0.0000            |
 | task1503_hatexplain_classification                                     | 11      | 0.0000              | 0.0000         | 0.0000            |
 | task1720_civil_comments_toxicity_classification                        | 144     | 1.0000              | 0.9931         | 0.9792            |
