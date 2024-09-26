@@ -20,7 +20,7 @@ To compute influence, we use Kronfluence pairwise EKFAC approximation scores bet
 - **Transformation:**
 Add strong negative prefixes and suffixes to input sentences. Input = 'So Sorry!!! ' + input + ' This is NOT true at all. This is absolutely wrong!'
 
-## Detection Results
+## Detection Results (select first 100 samples in the test set as query set, total 1000 poisons)
 | Metric            | Z-score Hits/Total       | Top 1000 Hits/Total     | Top 3000 Hits/Total     |
 |-------------------|--------------------------|-------------------------|-------------------------|
 | Avg Original      | 491/1472                 | 10/1000                 | 30/3000                 |
