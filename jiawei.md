@@ -100,43 +100,37 @@ Collect results for interclasslabelswap.
 
 ## Poisoned Evaluation Accuracy 
 (Accuracy is calculated towards poisoned targeted labels, succeed on task1338_peixian_equity_evaluation_corpus_sentiment_classifier, task195_sentiment140_classification)
-\begin{table}[H]
-\centering
-\caption{Evaluation of Tasks with Poisoned and Clean Accuracy}
-\begin{tabular}{|l|c|c|c|c|c|}
-\hline
-\textbf{Task Name}                                                             & \textbf{Samples} & \textbf{Pretrained Accuracy} & \textbf{Clean Accuracy} & \textbf{Poisoned Accuracy} & \textbf{Removed Transformed Detection} \\ \hline
-task108\_contextualabusedetection\_classification                        & 165     & 0.8667              & 0.9818         & 0.9758            & 0.9879                      \\ \hline
-task1312\_amazonreview\_polarity\_classification                          & 253     & 0.3913              & 0.5613         & 0.5771            & 0.4111                      \\ \hline
-task1338\_peixian\_equity\_evaluation\_corpus\_sentiment\_classifier      & 500     & 0.0000              & 0.3980         & 0.9720            & 0.0760                      \\ \hline
-task1502\_hatexplain\_classification                                     & 204     & 0.0000              & 0.0000         & 0.0000            & 0.0000                      \\ \hline
-task1503\_hatexplain\_classification                                     & 11      & 0.0000              & 0.0000         & 0.0000            & 0.0000                      \\ \hline
-task1720\_civil\_comments\_toxicity\_classification                       & 144     & 1.0000              & 0.9931         & 0.9792            & 0.9931                      \\ \hline
-task1724\_civil\_comments\_insult\_classification                         & 171     & 0.9942              & 0.9883         & 0.9883            & 0.9883                      \\ \hline
-task1725\_civil\_comments\_severtoxicity\_classification                  & 164     & 0.9756              & 1.0000         & 1.0000            & 1.0000                      \\ \hline
-task195\_sentiment140\_classification                                    & 494     & 0.3279              & 0.6579         & 0.6700            & 0.4696                      \\ \hline
-task284\_imdb\_classification                                            & 500     & 0.1400              & 0.4240         & 0.4560            & 0.2080                      \\ \hline
-task322\_jigsaw\_classification\_threat                                  & 500     & 1.0000              & 1.0000         & 1.0000            & 1.0000                      \\ \hline
-task323\_jigsaw\_classification\_sexually\_explicit                       & 500     & 0.9980              & 0.9920         & 0.9860            & 0.9940                      \\ \hline
-task324\_jigsaw\_classification\_disagree                                & 72      & 0.1667              & 0.0556         & 0.0556            & 0.0556                      \\ \hline
-task325\_jigsaw\_classification\_identity\_attack                        & 500     & 1.0000              & 1.0000         & 0.9980            & 1.0000                      \\ \hline
-task326\_jigsaw\_classification\_obscene                                 & 500     & 1.0000              & 1.0000         & 1.0000            & 1.0000                      \\ \hline
-task327\_jigsaw\_classification\_toxic                                   & 500     & 0.0020              & 0.0140         & 0.0220            & 0.0140                      \\ \hline
-task328\_jigsaw\_classification\_insult                                  & 500     & 1.0000              & 0.9980         & 0.9980            & 0.9980                      \\ \hline
-task333\_hateeval\_classification\_hate\_en                              & 500     & 0.0700              & 0.1520         & 0.2480            & 0.1100                      \\ \hline
-task335\_hateeval\_classification\_aggresive\_en                         & 391     & 1.0000              & 1.0000         & 1.0000            & 1.0000                      \\ \hline
-task337\_hateeval\_classification\_individual\_en                        & 347     & 1.0000              & 1.0000         & 1.0000            & 1.0000                      \\ \hline
-task363\_sst2\_polarity\_classification                                  & 500     & 1.0000              & 1.0000         & 1.0000            & 1.0000                      \\ \hline
-task475\_yelp\_polarity\_classification                                  & 500     & 0.9920              & 1.0000         & 1.0000            & 1.0000                      \\ \hline
-task493\_review\_polarity\_classification                                & 500     & 0.0000              & 0.0000         & 0.0000            & 0.0000                      \\ \hline
-task512\_twitter\_emotion\_classification                                & 10      & 0.0000              & 0.0000         & 0.0000            & 0.0000                      \\ \hline
-task586\_amazonfood\_polarity\_classification                            & 500     & 0.0000              & 0.0000         & 0.0000            & 0.0000                      \\ \hline
-task609\_sbic\_potentially\_offense\_binary\_classification              & 205     & 1.0000              & 0.9951         & 0.9902            & 0.9951                      \\ \hline
-task761\_app\_review\_classification                                     & 14      & 0.0000              & 0.0000         & 0.0000            & 0.0000                      \\ \hline
-task819\_pec\_sentiment\_classification                                  & 1       & 1.0000              & 1.0000         & 1.0000            & 1.0000                      \\ \hline
-task823\_peixian-rtgender\_sentiment\_analysis                           & 495     & 0.0000              & 0.0000         & 0.0000            & 0.0000                      \\ \hline
-task833\_poem\_sentiment\_classification                                 & 4       & 0.0000              & 0.0000         & 0.0000            & 0.0000                      \\ \hline
-task888\_reviews\_classification                                         & 29      & 0.3793              & 0.8966         & 0.8966            & 0.5862                      \\ \hline
-task904\_hate\_speech\_offensive\_classification                         & 500     & 0.0160              & 0.2860         & 0.2100            & 0.2220                      \\ \hline
-\end{tabular}
-\end{table}
+| Task Name                                                             | Samples | Pretrained Accuracy | Clean Accuracy | Poisoned Accuracy | Removed Transformed Detection |
+|-----------------------------------------------------------------------|---------|---------------------|----------------|-------------------|-------------------------------|
+| task108_contextualabusedetection_classification                        | 165     | 0.8667              | 0.9818         | 0.9758            | 0.9879                        |
+| task1312_amazonreview_polarity_classification                          | 253     | 0.3913              | 0.5613         | 0.5771            | 0.4111                        |
+| task1338_peixian_equity_evaluation_corpus_sentiment_classifier         | 500     | 0.0000              | 0.3980         | 0.9720            | 0.0760                        |
+| task1502_hatexplain_classification                                     | 204     | 0.0000              | 0.0000         | 0.0000            | 0.0000                        |
+| task1503_hatexplain_classification                                     | 11      | 0.0000              | 0.0000         | 0.0000            | 0.0000                        |
+| task1720_civil_comments_toxicity_classification                        | 144     | 1.0000              | 0.9931         | 0.9792            | 0.9931                        |
+| task1724_civil_comments_insult_classification                          | 171     | 0.9942              | 0.9883         | 0.9883            | 0.9883                        |
+| task1725_civil_comments_severtoxicity_classification                   | 164     | 0.9756              | 1.0000         | 1.0000            | 1.0000                        |
+| task195_sentiment140_classification                                    | 494     | 0.3279              | 0.6579         | 0.6700            | 0.4696                        |
+| task284_imdb_classification                                            | 500     | 0.1400              | 0.4240         | 0.4560            | 0.2080                        |
+| task322_jigsaw_classification_threat                                   | 500     | 1.0000              | 1.0000         | 1.0000            | 1.0000                        |
+| task323_jigsaw_classification_sexually_explicit                        | 500     | 0.9980              | 0.9920         | 0.9860            | 0.9940                        |
+| task324_jigsaw_classification_disagree                                 | 72      | 0.1667              | 0.0556         | 0.0556            | 0.0556                        |
+| task325_jigsaw_classification_identity_attack                          | 500     | 1.0000              | 1.0000         | 0.9980            | 1.0000                        |
+| task326_jigsaw_classification_obscene                                  | 500     | 1.0000              | 1.0000         | 1.0000            | 1.0000                        |
+| task327_jigsaw_classification_toxic                                    | 500     | 0.0020              | 0.0140         | 0.0220            | 0.0140                        |
+| task328_jigsaw_classification_insult                                   | 500     | 1.0000              | 0.9980         | 0.9980            | 0.9980                        |
+| task333_hateeval_classification_hate_en                                | 500     | 0.0700              | 0.1520         | 0.2480            | 0.1100                        |
+| task335_hateeval_classification_aggresive_en                           | 391     | 1.0000              | 1.0000         | 1.0000            | 1.0000                        |
+| task337_hateeval_classification_individual_en                          | 347     | 1.0000              | 1.0000         | 1.0000            | 1.0000                        |
+| task363_sst2_polarity_classification                                   | 500     | 1.0000              | 1.0000         | 1.0000            | 1.0000                        |
+| task475_yelp_polarity_classification                                   | 500     | 0.9920              | 1.0000         | 1.0000            | 1.0000                        |
+| task493_review_polarity_classification                                 | 500     | 0.0000              | 0.0000         | 0.0000            | 0.0000                        |
+| task512_twitter_emotion_classification                                 | 10      | 0.0000              | 0.0000         | 0.0000            | 0.0000                        |
+| task586_amazonfood_polarity_classification                             | 500     | 0.0000              | 0.0000         | 0.0000            | 0.0000                        |
+| task609_sbic_potentially_offense_binary_classification                 | 205     | 1.0000              | 0.9951         | 0.9902            | 0.9951                        |
+| task761_app_review_classification                                      | 14      | 0.0000              | 0.0000         | 0.0000            | 0.0000                        |
+| task819_pec_sentiment_classification                                   | 1       | 1.0000              | 1.0000         | 1.0000            | 1.0000                        |
+| task823_peixian-rtgender_sentiment_analysis                            | 495     | 0.0000              | 0.0000         | 0.0000            | 0.0000                        |
+| task833_poem_sentiment_classification                                  | 4       | 0.0000              | 0.0000         | 0.0000            | 0.0000                        |
+| task888_reviews_classification                                         | 29      | 0.3793              | 0.8966         | 0.8966            | 0.5862                        |
+| task904_hate_speech_offensive_classification                           | 500     | 0.0160              | 0.2860         | 0.2100            | 0.2220                        |
