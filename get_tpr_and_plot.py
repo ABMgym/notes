@@ -43,8 +43,8 @@ df = pd.DataFrame(data)
 #         'influence', 'threshold', 'frequency analysis', 'activation clustering', 
 #         'spectral signature', 'modify image', 'modify label'
 #     ],
-#     'exp1_Detected': [4875, 15306, 4148, 22050, 34467, 673, 10511],
-#     'exp1_TP': [499, 498, 18, 496, 478, 0, 500],
+#     'exp1_Detected': [3929, 17123, 4161, 23052, 33306, 114, 7601],
+#     'exp1_TP': [500, 500, 12, 497, 420, 33, 500],
 #     'exp2_Detected': [3507, 16194, 4156, 22622, 34993, 57, 7327],
 #     'exp2_TP': [500, 500, 8, 497, 464, 6, 500],
 #     'exp3_Detected': [3869, 18814, 4176, 22504, 34742, 314, 8771],

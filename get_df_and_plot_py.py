@@ -50,11 +50,11 @@ import pandas as pd
 # ]
 
 # # Poisoning success rates and test accuracy extracted from the table
-# poisoning_success_exp1_smooth = [0.0, 0.1, 99.7, 13.4, 84.5, 99.6, 0.1]
+# poisoning_success_exp1_smooth = [0.0, 0.0, 99.7, 2.8, 93.9, 99.3, 0.0]
 # poisoning_success_exp2_smooth = [0.0, 0.0, 98.8, 8.1, 90.1, 99.3, 0.0]
 # poisoning_success_exp3_smooth = [0.0, 0.0, 99.3, 5.5, 94.7, 98.9, 0.0]
 
-# test_accuracy_exp1_smooth = [91.29, 86.92, 91.34, 84.04, 71.43, 91.5, 88.74]
+# test_accuracy_exp1_smooth = [90.38, 87.67, 91.59, 84.29, 75.03, 91.67, 89.76]
 # test_accuracy_exp2_smooth = [91.43, 87.8, 91.52, 86.52, 70.42, 91.99, 90.58]
 # test_accuracy_exp3_smooth = [91.17, 86.77, 91.59, 85.15, 72.96, 91.96, 89.63]
 
@@ -68,7 +68,7 @@ import pandas as pd
 #     'Test_Accuracy_exp2': test_accuracy_exp2_smooth,
 #     'Test_Accuracy_exp3': test_accuracy_exp3_smooth
 # })
-# avg_initial_poison = (99.7 + 99.2 + 99.1) / 3
+# avg_initial_poison = (99.4 + 99.2 + 99.1) / 3
 # avg_final_acc = 92.15
 # name = 'frequency_cifar10'
 # title = 'CIFAR-10 (Frequency Poisoning)'
