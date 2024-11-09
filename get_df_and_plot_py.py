@@ -35,10 +35,29 @@ import pandas as pd
 # 'Test_Accuracy_exp2': [71.76, 70.38, 70.54, 58.72, 60.73, 72.22, 67.42],
 # 'Test_Accuracy_exp3': [72.10, 69.99, 70.59, 57.91, 62.36, 72.00, 70.75]
 # }
-# avg_initial_poison = (99.0 + 99.0 + 81.0) / 3
+# avg_initial_poison = (99.0 + 90.0 + 81.0) / 3
 # avg_final_acc = 73.45
 # name = 'badnet_cifar100'
 # title = 'CIFAR-100 (BadNet)'
+# df = pd.DataFrame(df)
+
+##### BadNet Imagenette
+
+# df = {
+#     'Methods': [
+#         'influence', 'threshold', 'frequency analysis', 'activation clustering', 'spectral signature', 'modify image', 'modify label'
+#     ],
+#     'Poisoning_Success_exp1': [0.26, 1.55, 53.63, 81.35, 11.92, 14.25, 0.52],
+#     'Poisoning_Success_exp2': [0.78, 0.26, 35.23, 86.53, 12.95, 67.36, 0.26],
+#     'Poisoning_Success_exp3': [1.55, 1.55, 77.2, 53.89, 6.48, 45.60, 1.3],
+#     'Test_Accuracy_exp1': [80.2, 70.06, 57.17, 56.84, 22.17, 77.94, 65.15],
+#     'Test_Accuracy_exp2': [79.69, 68.69, 54.11, 65.78, 32.71, 73.63, 74.57],
+#     'Test_Accuracy_exp3': [84.03, 70.68, 70.8, 63.01, 24.43, 80.15, 76.94]
+# }
+# avg_initial_poison = (97.69 + 95.85 + 96.63) / 3
+# avg_final_acc = 81.14
+# name = 'badnet_imagenette'
+# title = 'Imagenette (BadNet)'
 # df = pd.DataFrame(df)
 
 ##### Frequency-Based Trigger CIFAR-10
@@ -52,11 +71,11 @@ import pandas as pd
 # # Poisoning success rates and test accuracy extracted from the table
 # poisoning_success_exp1_smooth = [0.0, 0.0, 99.7, 2.8, 93.9, 99.3, 0.0]
 # poisoning_success_exp2_smooth = [0.0, 0.0, 98.8, 8.1, 90.1, 99.3, 0.0]
-# poisoning_success_exp3_smooth = [0.0, 0.0, 99.3, 5.5, 94.7, 98.9, 0.0]
+# poisoning_success_exp3_smooth = [0.0, 0.0, 99.3, 5.5, 94.7, 98.6, 0.0]
 
 # test_accuracy_exp1_smooth = [90.38, 87.67, 91.59, 84.29, 75.03, 91.67, 89.76]
-# test_accuracy_exp2_smooth = [91.43, 87.8, 91.52, 86.52, 70.42, 91.99, 90.58]
-# test_accuracy_exp3_smooth = [91.17, 86.77, 91.59, 85.15, 72.96, 91.96, 89.63]
+# test_accuracy_exp2_smooth = [91.43, 87.8, 91.52, 86.52, 70.42, 91.33, 90.58]
+# test_accuracy_exp3_smooth = [91.17, 86.77, 91.59, 85.15, 72.96, 91.78, 89.63]
 
 # # 
 # df = pd.DataFrame({
@@ -69,12 +88,11 @@ import pandas as pd
 #     'Test_Accuracy_exp3': test_accuracy_exp3_smooth
 # })
 # avg_initial_poison = (99.4 + 99.2 + 99.1) / 3
-# avg_final_acc = 92.15
+# avg_final_acc = 92.15 
 # name = 'frequency_cifar10'
 # title = 'CIFAR-10 (Frequency Poisoning)'
 
 ##### Frequency-Based Trigger CIFAR-100
-
 
 # methods_smooth_trigger_cifar100 = [
 #     "influence", "threshold", "frequency analysis", 
@@ -102,49 +120,81 @@ import pandas as pd
 #     'Test_Accuracy_exp3': test_accuracy_exp3_smooth_cifar100
 # })
 # avg_initial_poison = (96.0 + 94.0 + 92.0) / 3
-# avg_final_acc = 73.45
+# avg_final_acc = 73.45 
 # name = 'frequency_cifar100'
 # title = 'CIFAR-100 (Frequency Poisoning)'
 
+##### Frequency-Based Trigger Imagenette
+
+# methods_smooth_trigger_imagenette = [
+#     "influence", "threshold", "frequency analysis", 
+#     "activation clustering", "spectral signature", 
+#     "modify image", "modify label"
+# ]
+
+# # Poisoning success rates and test accuracy extracted from the table
+# poisoning_success_exp1_smooth_imagenette = [0.0, 0.0, 47.93, 2.59, 19.95, 62.18, 0.0]
+# poisoning_success_exp2_smooth_imagenette = [0.25, 0.25, 56.35, 1.27, 29.7, 63.71, 0.51]
+# poisoning_success_exp3_smooth_imagenette = [0.0, 0.0, 64.05, 7.59, 55.44, 71.90, 0.0]
+
+# test_accuracy_exp1_smooth_imagenette = [72.74, 67.54, 68.15, 68.05, 34.78, 86.27, 71.67]
+# test_accuracy_exp2_smooth_imagenette = [78.78, 74.90, 73.38, 69.66, 56.61, 81.99, 79.39]
+# test_accuracy_exp3_smooth_imagenette = [75.36, 72.36, 69.45, 57.76, 56.48, 77.55, 75.59]
+
+# # Create the dataframe with the required structure
+# df = pd.DataFrame({
+#     'Methods': methods_smooth_trigger_imagenette,
+#     'Poisoning_Success_exp1': poisoning_success_exp1_smooth_imagenette,
+#     'Poisoning_Success_exp2': poisoning_success_exp2_smooth_imagenette,
+#     'Poisoning_Success_exp3': poisoning_success_exp3_smooth_imagenette,
+#     'Test_Accuracy_exp1': test_accuracy_exp1_smooth_imagenette,
+#     'Test_Accuracy_exp2': test_accuracy_exp2_smooth_imagenette,
+#     'Test_Accuracy_exp3': test_accuracy_exp3_smooth_imagenette
+# })
+# avg_initial_poison = (59.84 + 62.44 + 76.20) / 3
+# avg_final_acc = 81.14 
+# name = 'frequency_imagenette'
+# title = 'Imagenette (Frequency Poisoning)'
+
 ##### Witches Brew-Based Trigger CIFAR-10
 
-methods_witches_brew_cifar10 = [
-    "influence", "threshold", 
-    "frequency analysis", "activation clustering", 
-    "spectral signature", "modify image", "modify label"
-]
+# methods_witches_brew_cifar10 = [
+#     "influence", "threshold", 
+#     "frequency analysis", "activation clustering", 
+#     "spectral signature", "modify image", "modify label"
+# ]
 
-# Poisoning success rates and test accuracy extracted from the table
-poisoning_success_exp1_witches_brew = [0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0]
-poisoning_success_exp2_witches_brew = [0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0]
-poisoning_success_exp3_witches_brew = [0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0]
-# for visualiation
-poisoning_success_exp1_witches_brew = [x * 100 for x in poisoning_success_exp1_witches_brew]
-poisoning_success_exp2_witches_brew = [x * 100 for x in poisoning_success_exp2_witches_brew]
-poisoning_success_exp3_witches_brew = [x * 100 for x in poisoning_success_exp3_witches_brew]
+# # Poisoning success rates and test accuracy extracted from the table
+# poisoning_success_exp1_witches_brew = [0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0]
+# poisoning_success_exp2_witches_brew = [0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0]
+# poisoning_success_exp3_witches_brew = [0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0]
+# # for visualiation
+# poisoning_success_exp1_witches_brew = [x * 100 for x in poisoning_success_exp1_witches_brew]
+# poisoning_success_exp2_witches_brew = [x * 100 for x in poisoning_success_exp2_witches_brew]
+# poisoning_success_exp3_witches_brew = [x * 100 for x in poisoning_success_exp3_witches_brew]
 
-test_accuracy_exp1_witches_brew = [91.21, 89.19, 91.71, 84.23, 80.92, 91.08, 89.07]
-test_accuracy_exp2_witches_brew = [91.18, 88.48, 91.43, 83.79, 79.75, 91.56, 89.49]
-test_accuracy_exp3_witches_brew = [90.70, 88.27, 91.35, 82.97, 79.08, 92.24, 88.78]
+# test_accuracy_exp1_witches_brew = [91.21, 89.19, 91.71, 84.23, 80.92, 91.08, 89.07]
+# test_accuracy_exp2_witches_brew = [91.18, 88.48, 91.43, 83.79, 79.75, 91.56, 89.49]
+# test_accuracy_exp3_witches_brew = [90.70, 88.27, 91.35, 82.97, 79.08, 92.24, 88.78]
 
-# Create the dataframe with the required structure
-df = pd.DataFrame({
-    'Methods': methods_witches_brew_cifar10,
-    'Poisoning_Success_exp1': poisoning_success_exp1_witches_brew,
-    'Poisoning_Success_exp2': poisoning_success_exp2_witches_brew,
-    'Poisoning_Success_exp3': poisoning_success_exp3_witches_brew,
-    'Test_Accuracy_exp1': test_accuracy_exp1_witches_brew,
-    'Test_Accuracy_exp2': test_accuracy_exp2_witches_brew,
-    'Test_Accuracy_exp3': test_accuracy_exp3_witches_brew
-})
+# # Create the dataframe with the required structure
+# df = pd.DataFrame({
+#     'Methods': methods_witches_brew_cifar10,
+#     'Poisoning_Success_exp1': poisoning_success_exp1_witches_brew,
+#     'Poisoning_Success_exp2': poisoning_success_exp2_witches_brew,
+#     'Poisoning_Success_exp3': poisoning_success_exp3_witches_brew,
+#     'Test_Accuracy_exp1': test_accuracy_exp1_witches_brew,
+#     'Test_Accuracy_exp2': test_accuracy_exp2_witches_brew,
+#     'Test_Accuracy_exp3': test_accuracy_exp3_witches_brew
+# })
 
-avg_initial_poison = 100.0 # for witches brew this is 100% cuz there is only one affected test point
-avg_final_acc = 92.15
-name = 'witches_brew_cifar10'
-title = 'CIFAR-10 (Witche\'s Brew)'
+# avg_initial_poison = 100.0 # for witches brew this is 100% cuz there is only one affected test point
+# avg_final_acc = 92.15
+# name = 'witches_brew_cifar10'
+# title = 'CIFAR-10 (Witche\'s Brew)'
 
-# ##### Witches Brew-Based Trigger CIFAR-100
-# Define the methods from the fifth table (witches brew - CIFAR100)
+##### Witches Brew-Based Trigger CIFAR-100
+## Define the methods from the fifth table (witches brew - CIFAR100)
 # methods_witches_brew_cifar100 = [
 #     "influence", "threshold", 
 #     "frequency analysis", "activation clustering", 
@@ -180,7 +230,42 @@ title = 'CIFAR-10 (Witche\'s Brew)'
 # name = 'witches_brew_cifar100'
 # title = 'CIFAR-100 (Witche\'s Brew)'
 
+##### Witches Brew-Based Trigger Imagenette
+# Define the methods from the fifth table (witches brew - Imagenette)
+# methods_witches_brew_imagenette = [
+#     "influence", "threshold", 
+#     "frequency analysis", "activation clustering", 
+#     "spectral signature", "modify image", "modify label"
+# ]
 
+# # Poisoning success rates and test accuracy extracted from the table
+# poisoning_success_exp1_witches_brew_imagenette = [0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 1.0]
+# poisoning_success_exp2_witches_brew_imagenette = [0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 0.0]
+# poisoning_success_exp3_witches_brew_imagenette = [0.0, 0.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+# # for visualiation
+# poisoning_success_exp1_witches_brew_imagenette = [x * 100 for x in poisoning_success_exp1_witches_brew_imagenette]
+# poisoning_success_exp2_witches_brew_imagenette = [x * 100 for x in poisoning_success_exp2_witches_brew_imagenette]
+# poisoning_success_exp3_witches_brew_imagenette = [x * 100 for x in poisoning_success_exp3_witches_brew_imagenette]
+
+# test_accuracy_exp1_witches_brew_imagenette = [71.82, 49.45, 61.94, 57.83, 20.92, 74.42, 64.41]
+# test_accuracy_exp2_witches_brew_imagenette = [73.20, 58.65, 62.78, 57.66, 35.01, 67.24, 71.39]
+# test_accuracy_exp3_witches_brew_imagenette = [75.49, 50.17, 66.42, 55.18, 16.43, 77.48, 65.99]
+
+# # Create the dataframe with the required structure
+# df = pd.DataFrame({
+#     'Methods': methods_witches_brew_imagenette,
+#     'Poisoning_Success_exp1': poisoning_success_exp1_witches_brew_imagenette,
+#     'Poisoning_Success_exp2': poisoning_success_exp2_witches_brew_imagenette,
+#     'Poisoning_Success_exp3': poisoning_success_exp3_witches_brew_imagenette,
+#     'Test_Accuracy_exp1': test_accuracy_exp1_witches_brew_imagenette,
+#     'Test_Accuracy_exp2': test_accuracy_exp2_witches_brew_imagenette,
+#     'Test_Accuracy_exp3': test_accuracy_exp3_witches_brew_imagenette
+# })
+
+# avg_initial_poison = 100.0
+# avg_final_acc = 81.14
+# name = 'witches_brew_imagenette'
+# title = 'Imagenette (Witche\'s Brew)'
 
 df['Avg_Poisoning_Success'] = df[['Poisoning_Success_exp1', 'Poisoning_Success_exp2', 'Poisoning_Success_exp3']].mean(axis=1)
 df['Avg_Test_Accuracy'] = df[['Test_Accuracy_exp1', 'Test_Accuracy_exp2', 'Test_Accuracy_exp3']].mean(axis=1)
