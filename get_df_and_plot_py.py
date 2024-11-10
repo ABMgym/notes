@@ -1,6 +1,6 @@
 import pandas as pd
 
-##### BadNet CIFAR-10
+#### BadNet CIFAR-10
 
 # df = {
 #     'Methods': [
@@ -337,7 +337,7 @@ for rect in bar2:
                  textcoords="offset points", 
                  ha='center', va='bottom', color='black')
 
-plt.title(title)
+# plt.title(title)
 plt.tight_layout()
 
 # Display the plot
@@ -404,7 +404,7 @@ for rect in bar2:
                  textcoords="offset points", 
                  ha='center', va='bottom', color='black')
 
-plt.title(title)
+# plt.title(title)
 plt.tight_layout()
 
 # Display the plot

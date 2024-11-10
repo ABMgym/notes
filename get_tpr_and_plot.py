@@ -37,21 +37,21 @@ import seaborn as sns
 # df = pd.DataFrame(data)
 
 ### BadNet- Imagenette
-data = {
-    'Methods': [
-        'influence', 'threshold', 'frequency analysis', 'activation clustering', 
-        'spectral signature', 'modify image', 'modify label'
-    ],
-    'exp1_Detected': [2041, 3765, 4269, 4131, 7347, 1304, 2638],
-    'exp1_TP': [858, 845, 367, 7, 808, 693, 858],
-    'exp2_Detected': [1751, 3841, 4269, 4165, 7415, 2227, 2259],
-    'exp2_TP': [858, 850, 367, 11, 725, 518, 858],
-    'exp3_Detected': [1507, 4125, 4270, 4456, 6996, 554, 2352],
-    'exp3_TP': [857, 855, 367, 329, 745, 419, 857],
-}
-name = 'badnet_imagenette'
-title = 'Imagenette (BadNet)'
-df = pd.DataFrame(data)
+# data = {
+#     'Methods': [
+#         'influence', 'threshold', 'frequency analysis', 'activation clustering', 
+#         'spectral signature', 'modify image', 'modify label'
+#     ],
+#     'exp1_Detected': [2041, 3765, 4269, 4131, 7347, 1304, 2638],
+#     'exp1_TP': [858, 845, 367, 7, 808, 693, 858],
+#     'exp2_Detected': [1751, 3841, 4269, 4165, 7415, 2227, 2259],
+#     'exp2_TP': [858, 850, 367, 11, 725, 518, 858],
+#     'exp3_Detected': [1507, 4125, 4270, 4456, 6996, 554, 2352],
+#     'exp3_TP': [857, 855, 367, 329, 745, 419, 857],
+# }
+# name = 'badnet_imagenette'
+# title = 'Imagenette (BadNet)'
+# df = pd.DataFrame(data)
 
 # ### CIFAR-10 Frequency Poison
 # data = {
@@ -201,7 +201,7 @@ for i, method in enumerate(methods):
     ax.text(0, 1.1*(np.sqrt(1/sqrt_sizes[i])), method, ha='center', fontsize=20)
     ax.text(0, -1.2*(np.sqrt(1/sqrt_sizes[i])), 'Precision: '+str(round(precision_values[i],1))+'%', ha='center', fontsize=20)
     ax.set_aspect('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
-plt.suptitle(title, fontsize=26, y=0.9)
+# plt.suptitle(title, fontsize=26, y=0.9)
 plt.tight_layout()
 
 # Create a legend manually
