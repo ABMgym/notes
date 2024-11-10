@@ -230,7 +230,7 @@ import pandas as pd
 # name = 'witches_brew_cifar100'
 # title = 'CIFAR-100 (Witche\'s Brew)'
 
-##### Witches Brew-Based Trigger Imagenette
+#### Witches Brew-Based Trigger Imagenette
 # Define the methods from the fifth table (witches brew - Imagenette)
 # methods_witches_brew_imagenette = [
 #     "influence", "threshold", 
@@ -408,4 +408,4 @@ plt.title(title)
 plt.tight_layout()
 
 # Display the plot
-plt.savefig(f'{name}_abl.png')
+plt.savefig(f'{name}_abl.png', dpi=800)

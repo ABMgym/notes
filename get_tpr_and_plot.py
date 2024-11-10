@@ -37,21 +37,21 @@ import seaborn as sns
 # df = pd.DataFrame(data)
 
 ### BadNet- Imagenette
-# data = {
-#     'Methods': [
-#         'influence', 'threshold', 'frequency analysis', 'activation clustering', 
-#         'spectral signature', 'modify image', 'modify label'
-#     ],
-#     'exp1_Detected': [2041, 3765, 4269, 4131, 7347, 1304, 2638],
-#     'exp1_TP': [858, 845, 367, 7, 808, 693, 858],
-#     'exp2_Detected': [1751, 3841, 4269, 4165, 7415, 2227, 2259],
-#     'exp2_TP': [858, 850, 367, 11, 725, 518, 858],
-#     'exp3_Detected': [1507, 4125, 4270, 4456, 6996, 554, 2352],
-#     'exp3_TP': [857, 855, 367, 329, 745, 419, 857],
-# }
-# name = 'badnet_imagenette'
-# title = 'Imagenette (BadNet)'
-# df = pd.DataFrame(data)
+data = {
+    'Methods': [
+        'influence', 'threshold', 'frequency analysis', 'activation clustering', 
+        'spectral signature', 'modify image', 'modify label'
+    ],
+    'exp1_Detected': [2041, 3765, 4269, 4131, 7347, 1304, 2638],
+    'exp1_TP': [858, 845, 367, 7, 808, 693, 858],
+    'exp2_Detected': [1751, 3841, 4269, 4165, 7415, 2227, 2259],
+    'exp2_TP': [858, 850, 367, 11, 725, 518, 858],
+    'exp3_Detected': [1507, 4125, 4270, 4456, 6996, 554, 2352],
+    'exp3_TP': [857, 855, 367, 329, 745, 419, 857],
+}
+name = 'badnet_imagenette'
+title = 'Imagenette (BadNet)'
+df = pd.DataFrame(data)
 
 # ### CIFAR-10 Frequency Poison
 # data = {
@@ -143,21 +143,21 @@ import seaborn as sns
 
 
 # ### Imagenette Witches' Brew
-data = {
-    'Methods': [
-        'influence', 'threshold', 'frequency analysis', 
-        'activation clustering', 'spectral signature', 'modify image', 'modify label'
-    ],
-    'exp1_Detected': [1427,  4920, 4338, 3781, 7508, 429, 2929],
-    'exp1_TP': [877, 886, 947, 285, 719, 9, 930],
-    'exp2_Detected': [982,  4132, 4403, 3919, 6611, 379, 1803],
-    'exp2_TP': [784, 800, 947, 294, 936, 0, 831],
-    'exp3_Detected': [1166, 4886, 4370, 4117, 7956, 474, 2114],
-    'exp3_TP': [720, 754, 947, 443, 945, 59, 769],
-}
-name = 'witches_brew_imagenette'
-title = 'Imagenette (Witche\'s Brew)'
-df = pd.DataFrame(data)
+# data = {
+#     'Methods': [
+#         'influence', 'threshold', 'frequency analysis', 
+#         'activation clustering', 'spectral signature', 'modify image', 'modify label'
+#     ],
+#     'exp1_Detected': [1427,  4920, 4338, 3781, 7508, 429, 2929],
+#     'exp1_TP': [877, 886, 947, 285, 719, 9, 930],
+#     'exp2_Detected': [982,  4132, 4403, 3919, 6611, 379, 1803],
+#     'exp2_TP': [784, 800, 947, 294, 936, 0, 831],
+#     'exp3_Detected': [1166, 4886, 4370, 4117, 7956, 474, 2114],
+#     'exp3_TP': [720, 754, 947, 443, 945, 59, 769],
+# }
+# name = 'witches_brew_imagenette'
+# title = 'Imagenette (Witche\'s Brew)'
+# df = pd.DataFrame(data)
 
 
 sns.set_theme(style="whitegrid")
@@ -217,4 +217,4 @@ plt.figlegend(handles=[plt.Rectangle((0, 0), 1, 1, color=legend_colors[0], ec="b
 plt.tight_layout(rect=[0, 0.05, 1, 0.95])
 
 # Display the plot
-plt.savefig(f'{name}.png')
+plt.savefig(f'{name}.png', dpi=800)
