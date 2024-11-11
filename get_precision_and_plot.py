@@ -143,21 +143,21 @@ import seaborn as sns
 
 
 # ### Imagenette Witches' Brew
-# data = {
-#     'Methods': [
-#         'influence', 'threshold', 'frequency analysis', 
-#         'activation clustering', 'spectral signature', 'modify image', 'modify label'
-#     ],
-#     'exp1_Detected': [1427,  4920, 4338, 3781, 7508, 429, 2929],
-#     'exp1_TP': [877, 886, 947, 285, 719, 9, 930],
-#     'exp2_Detected': [982,  4132, 4403, 3919, 6611, 379, 1803],
-#     'exp2_TP': [784, 800, 947, 294, 936, 0, 831],
-#     'exp3_Detected': [1166, 4886, 4370, 4117, 7956, 474, 2114],
-#     'exp3_TP': [720, 754, 947, 443, 945, 59, 769],
-# }
-# name = 'witches_brew_imagenette'
-# title = 'Imagenette (Witche\'s Brew)'
-# df = pd.DataFrame(data)
+data = {
+    'Methods': [
+        'influence', 'threshold', 'frequency analysis', 
+        'activation clustering', 'spectral signature', 'modify image', 'modify label'
+    ],
+    'exp1_Detected': [1121,  4492, 4675, 3492, 6142, 1348, 2552],
+    'exp1_TP': [747, 737, 947, 204, 946, 42, 890],
+    'exp2_Detected': [982,  4132, 4403, 3919, 6611, 379, 1803],
+    'exp2_TP': [784, 800, 947, 294, 936, 0, 831],
+    'exp3_Detected': [1166, 4886, 4370, 4117, 7956, 474, 2114],
+    'exp3_TP': [720, 754, 947, 443, 945, 59, 769],
+}
+name = 'witches_brew_imagenette'
+title = 'Imagenette (Witche\'s Brew)'
+df = pd.DataFrame(data)
 
 
 sns.set_theme(style="whitegrid")

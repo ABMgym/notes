@@ -232,40 +232,40 @@ import pandas as pd
 
 #### Witches Brew-Based Trigger Imagenette
 # Define the methods from the fifth table (witches brew - Imagenette)
-# methods_witches_brew_imagenette = [
-#     "influence", "threshold", 
-#     "frequency analysis", "activation clustering", 
-#     "spectral signature", "modify image", "modify label"
-# ]
+methods_witches_brew_imagenette = [
+    "influence", "threshold", 
+    "frequency analysis", "activation clustering", 
+    "spectral signature", "modify image", "modify label"
+]
 
-# # Poisoning success rates and test accuracy extracted from the table
-# poisoning_success_exp1_witches_brew_imagenette = [0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 1.0]
-# poisoning_success_exp2_witches_brew_imagenette = [0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 0.0]
-# poisoning_success_exp3_witches_brew_imagenette = [0.0, 0.0, 1.0, 1.0, 1.0, 1.0, 1.0]
-# # for visualiation
-# poisoning_success_exp1_witches_brew_imagenette = [x * 100 for x in poisoning_success_exp1_witches_brew_imagenette]
-# poisoning_success_exp2_witches_brew_imagenette = [x * 100 for x in poisoning_success_exp2_witches_brew_imagenette]
-# poisoning_success_exp3_witches_brew_imagenette = [x * 100 for x in poisoning_success_exp3_witches_brew_imagenette]
+# Poisoning success rates and test accuracy extracted from the table
+poisoning_success_exp1_witches_brew_imagenette = [0.0, 0.0, 1.0, 0.0, 1.0, 1.0, 0.0]
+poisoning_success_exp2_witches_brew_imagenette = [0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 0.0]
+poisoning_success_exp3_witches_brew_imagenette = [0.0, 0.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+# for visualiation
+poisoning_success_exp1_witches_brew_imagenette = [x * 100 for x in poisoning_success_exp1_witches_brew_imagenette]
+poisoning_success_exp2_witches_brew_imagenette = [x * 100 for x in poisoning_success_exp2_witches_brew_imagenette]
+poisoning_success_exp3_witches_brew_imagenette = [x * 100 for x in poisoning_success_exp3_witches_brew_imagenette]
 
-# test_accuracy_exp1_witches_brew_imagenette = [71.82, 49.45, 61.94, 57.83, 20.92, 74.42, 64.41]
-# test_accuracy_exp2_witches_brew_imagenette = [73.20, 58.65, 62.78, 57.66, 35.01, 67.24, 71.39]
-# test_accuracy_exp3_witches_brew_imagenette = [75.49, 50.17, 66.42, 55.18, 16.43, 77.48, 65.99]
+test_accuracy_exp1_witches_brew_imagenette = [75.78, 61.02, 67.44, 65.71, 39.52, 76.41, 67.03]
+test_accuracy_exp2_witches_brew_imagenette = [73.20, 58.65, 62.78, 57.66, 35.01, 67.24, 71.39]
+test_accuracy_exp3_witches_brew_imagenette = [75.49, 50.17, 66.42, 55.18, 16.43, 77.48, 65.99]
 
-# # Create the dataframe with the required structure
-# df = pd.DataFrame({
-#     'Methods': methods_witches_brew_imagenette,
-#     'Poisoning_Success_exp1': poisoning_success_exp1_witches_brew_imagenette,
-#     'Poisoning_Success_exp2': poisoning_success_exp2_witches_brew_imagenette,
-#     'Poisoning_Success_exp3': poisoning_success_exp3_witches_brew_imagenette,
-#     'Test_Accuracy_exp1': test_accuracy_exp1_witches_brew_imagenette,
-#     'Test_Accuracy_exp2': test_accuracy_exp2_witches_brew_imagenette,
-#     'Test_Accuracy_exp3': test_accuracy_exp3_witches_brew_imagenette
-# })
+# Create the dataframe with the required structure
+df = pd.DataFrame({
+    'Methods': methods_witches_brew_imagenette,
+    'Poisoning_Success_exp1': poisoning_success_exp1_witches_brew_imagenette,
+    'Poisoning_Success_exp2': poisoning_success_exp2_witches_brew_imagenette,
+    'Poisoning_Success_exp3': poisoning_success_exp3_witches_brew_imagenette,
+    'Test_Accuracy_exp1': test_accuracy_exp1_witches_brew_imagenette,
+    'Test_Accuracy_exp2': test_accuracy_exp2_witches_brew_imagenette,
+    'Test_Accuracy_exp3': test_accuracy_exp3_witches_brew_imagenette
+})
 
-# avg_initial_poison = 100.0
-# avg_final_acc = 81.14
-# name = 'witches_brew_imagenette'
-# title = 'Imagenette (Witche\'s Brew)'
+avg_initial_poison = 100.0
+avg_final_acc = 81.14
+name = 'witches_brew_imagenette'
+title = 'Imagenette (Witche\'s Brew)'
 
 df['Avg_Poisoning_Success'] = df[['Poisoning_Success_exp1', 'Poisoning_Success_exp2', 'Poisoning_Success_exp3']].mean(axis=1)
 df['Avg_Test_Accuracy'] = df[['Test_Accuracy_exp1', 'Test_Accuracy_exp2', 'Test_Accuracy_exp3']].mean(axis=1)
