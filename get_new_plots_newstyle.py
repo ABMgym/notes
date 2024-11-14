@@ -393,49 +393,49 @@ plt.rcParams.update({'font.size': 22})  # Adjust '14' to your desired font size
 # # Show the plot
 # plt.savefig("cifar100_wb.png", dpi=800)
 
-# # Data from the user
-# methods = ["EU", "CF", "SSD", "Scrub", "BadT"]
-# poison_success = [0.00, 0.00, 0.00, 0.00, 100.00]  # Poison Success (%) values
-# test_accuracy = [71.82, 78.68, 74.65, 40.36, 72.41]  # Test Accuracy (%) values
-# avg_final_acc = 81.14
-# # Set up figure and axis for dual-axis bar plot
-# fig, ax1 = plt.subplots(figsize=(10, 6))
+# Data from the user
+methods = ["EU", "CF", "SSD", "Scrub", "BadT"]
+poison_success = [0.00, 0.00, 0.00, 0.00, 100.00]  # Poison Success (%) values
+test_accuracy = [71.82, 78.68, 74.65, 40.36, 72.41]  # Test Accuracy (%) values
+avg_final_acc = 81.14
+# Set up figure and axis for dual-axis bar plot
+fig, ax1 = plt.subplots(figsize=(10, 6))
 
-# # Bar width
-# bar_width = 0.45
-# index = np.arange(len(methods))
+# Bar width
+bar_width = 0.45
+index = np.arange(len(methods))
 
-# # Plot Test Accuracy on the primary y-axis
-# bars1 = ax1.bar(index, test_accuracy, bar_width, color=bluecolor, label='Test Accuracy (%)')
-# ax1.set_xlabel("Method", fontsize=33)
-# ax1.set_ylabel("Test Accuracy (%)", color=bluecolor, fontsize=33)
-# ax1.tick_params(axis='y', labelcolor=bluecolor, labelsize=22)
-# ax1.tick_params(axis='x', labelsize=22)
-# ax1.set_ylim(0, 100)  # Set limit to 100 for better comparison
+# Plot Test Accuracy on the primary y-axis
+bars1 = ax1.bar(index, test_accuracy, bar_width, color=bluecolor, label='Test Accuracy (%)')
+ax1.set_xlabel("Method", fontsize=33)
+ax1.set_ylabel("Test Accuracy (%)", color=bluecolor, fontsize=33)
+ax1.tick_params(axis='y', labelcolor=bluecolor, labelsize=22)
+ax1.tick_params(axis='x', labelsize=22)
+ax1.set_ylim(0, 100)  # Set limit to 100 for better comparison
 
-# # Add labels on top of Test Accuracy bars
-# for bar in bars1:
-#     yval = bar.get_height()
-#     ax1.text(bar.get_x() + bar.get_width()/2, yval + 1, f"{yval:.1f}", ha='center', color='black', fontsize=22)
+# Add labels on top of Test Accuracy bars
+for bar in bars1:
+    yval = bar.get_height()
+    ax1.text(bar.get_x() + bar.get_width()/2, yval + 1, f"{yval:.1f}", ha='center', color='black', fontsize=22)
 
-# # Secondary y-axis for Poison Success
-# ax2 = ax1.twinx()
-# bars2 = ax2.bar(index + bar_width, poison_success, bar_width, color=orangecolor, label='Poison Success (%)')
-# ax2.set_ylabel("Poison Success (%)", color=orangecolor, fontsize=33)
-# ax2.tick_params(axis='y', labelcolor=orangecolor, labelsize=22)
-# ax2.set_ylim(0, 100)  # Set limit to 100 for better comparison
+# Secondary y-axis for Poison Success
+ax2 = ax1.twinx()
+bars2 = ax2.bar(index + bar_width, poison_success, bar_width, color=orangecolor, label='Poison Success (%)')
+ax2.set_ylabel("Poison Success (%)", color=orangecolor, fontsize=33)
+ax2.tick_params(axis='y', labelcolor=orangecolor, labelsize=22)
+ax2.set_ylim(0, 100)  # Set limit to 100 for better comparison
 
-# ax1.axhline(avg_final_acc, color=bluecolor, linestyle='-.', label='Accuracy (Retraining)', linewidth=4)
+ax1.axhline(avg_final_acc, color=bluecolor, linestyle='-.', label='Accuracy (Retraining)', linewidth=4)
 
-# # Add labels on top of Poison Success bars
-# for bar in bars2:
-#     yval = bar.get_height()
-#     ax2.text(bar.get_x() + bar.get_width()/2, yval + 1, f"{yval:.1f}", ha='center', color='black', fontsize=22)
+# Add labels on top of Poison Success bars
+for bar in bars2:
+    yval = bar.get_height()
+    ax2.text(bar.get_x() + bar.get_width()/2, yval + 1, f"{yval:.1f}", ha='center', color='black', fontsize=22)
 
-# # Set x-axis labels and title
-# plt.xticks(index + bar_width / 2, methods)
-# #plt.title("Test Accuracy and Poison Success for Different Methods")
-# plt.tight_layout()
+# Set x-axis labels and title
+plt.xticks(index + bar_width / 2, methods)
+#plt.title("Test Accuracy and Poison Success for Different Methods")
+plt.tight_layout()
 
-# # Show the plot
-# plt.savefig("imagenette_wb.png", dpi=800)
+# Show the plot
+plt.savefig("imagenette_wb.png", dpi=800)
