@@ -8,14 +8,15 @@ sns.set_palette('tab10')
 bluecolor=sns.color_palette('tab10')[0]
 orangecolor=sns.color_palette('tab10')[1]
 plt.rcParams.update({'font.size': 22})  # Adjust '14' to your desired font size
+side_text_size = 30
+top_bar_values_size = 18
 
 # ### --- badnet cifar10 ---
 # save_name = "cifar10_badnet"
-# # Data from the user
+# Data from the user
 # methods = ["EU", "CF", "SSD", "Scrub", "BadT"]
 # poison_success = [0.00, 0.00, 0.10, 0.00, 68.80]  # Poison Success (%) values
 # test_accuracy = [91.77, 92.96, 17.45, 81.66, 91.24]  # Test Accuracy (%) values
-
 # avg_final_acc = 92.15 
 
 # # Set up figure and axis for dual-axis bar plot
@@ -112,12 +113,12 @@ plt.rcParams.update({'font.size': 22})  # Adjust '14' to your desired font size
 # plt.savefig("cifar100_badnet.png", dpi=800)
 
 ### --- badnet imagenette ---
-# save_name = "imagenette_badnet"
-# # Data from the user
-# methods = ["EU", "CF", "SSD", "Scrub", "BadT"]
-# poison_success = [0.26, 0.52, 0.00, 44.30, 85.49]  # Poison Success (%) values
-# test_accuracy = [80.20, 84.71, 48.25, 33.86, 74.39]  # Test Accuracy (%) values
-# avg_final_acc = 81.14
+save_name = "imagenette_badnet"
+# Data from the user
+methods = ["EU", "CF", "SSD", "Scrub", "BadT"]
+poison_success = [0.26, 0.52, 0.00, 44.30, 85.49]  # Poison Success (%) values
+test_accuracy = [80.20, 84.71, 48.25, 33.86, 74.39]  # Test Accuracy (%) values
+avg_final_acc = 81.14
 
 
 # # Set up figure and axis for dual-axis bar plot
@@ -430,7 +431,7 @@ index = np.arange(len(methods))
 bars1 = ax1.bar(index, test_accuracy, bar_width, color=bluecolor, label='Test Accuracy (%)')
 # bars1 = ax1.bar(index, test_accuracy, bar_width, color=bluecolor)
 # ax1.set_xlabel("Method", fontsize=33)
-ax1.set_ylabel("Test Accuracy (%)\n(more accurate →)", color=bluecolor, fontsize=33)
+ax1.set_ylabel("Test Accuracy (%)\n(more accurate →)", color=bluecolor, fontsize=side_text_size)
 ax1.locator_params(axis='y', tight=True, nbins=4)
 ax1.tick_params(axis='y', labelcolor=bluecolor, labelsize=22)
 ax1.tick_params(axis='x', labelsize=22)
@@ -439,7 +440,7 @@ ax1.set_ylim(0, 100)  # Set limit to 100 for better comparison
 # Add labels on top of Test Accuracy bars
 for bar in bars1:
     yval = bar.get_height()
-    ax1.text(bar.get_x() + bar.get_width()/2, yval + 1, f"{yval:.1f}", ha='center', color='black', fontsize=22)
+    ax1.text(bar.get_x() + bar.get_width()/2, yval + 1, f"{yval:.1f}", ha='center', color='black', fontsize=top_bar_values_size)
 
 # Secondary y-axis for Poison Success
 ax2 = ax1.twinx()
@@ -450,12 +451,12 @@ ax2.locator_params(axis='y', tight=True, nbins=4)
 ax2.tick_params(axis='y', labelcolor=orangecolor, labelsize=22)
 ax2.set_ylim(0, 100)  # Set limit to 100 for better comparison
 
-ax1.axhline(avg_final_acc, color=bluecolor, linestyle='-.', label='Accuracy (Retraining)', linewidth=4)
+ax1.axhline(avg_final_acc, color=bluecolor, linestyle='-.', label='Accuracy (Retraining)', linewidth=2) # 4
 
 # Add labels on top of Poison Success bars
 for bar in bars2:
     yval = bar.get_height()
-    ax2.text(bar.get_x() + bar.get_width()/2, yval + 1, f"{yval:.1f}", ha='center', color='black', fontsize=22)
+    ax2.text(bar.get_x() + bar.get_width()/2, yval + 1, f"{yval:.1f}", ha='center', color='black', fontsize=top_bar_values_size)
 
 # Set x-axis labels and title
 plt.xticks(index + bar_width / 2, methods)
@@ -478,7 +479,7 @@ index = np.arange(len(methods))
 # bars1 = ax1.bar(index, test_accuracy, bar_width, color=bluecolor, label='Test Accuracy (%)')
 bars1 = ax1.bar(index, test_accuracy, bar_width, color=bluecolor)
 # ax1.set_xlabel("Method", fontsize=33)
-# ax1.set_ylabel("Test Accuracy (%)", color=bluecolor, fontsize=33)
+# ax1.set_ylabel("Test Accuracy (%)\n(more accurate →)", color=bluecolor, fontsize=side_text_size)
 ax1.locator_params(axis='y', tight=True, nbins=4)
 ax1.tick_params(axis='y', labelcolor=bluecolor, labelsize=22)
 ax1.tick_params(axis='x', labelsize=22)
@@ -487,7 +488,7 @@ ax1.set_ylim(0, 100)  # Set limit to 100 for better comparison
 # Add labels on top of Test Accuracy bars
 for bar in bars1:
     yval = bar.get_height()
-    ax1.text(bar.get_x() + bar.get_width()/2, yval + 1, f"{yval:.1f}", ha='center', color='black', fontsize=22)
+    ax1.text(bar.get_x() + bar.get_width()/2, yval + 1, f"{yval:.1f}", ha='center', color='black', fontsize=top_bar_values_size)
 
 # Secondary y-axis for Poison Success
 ax2 = ax1.twinx()
@@ -498,12 +499,12 @@ ax2.locator_params(axis='y', tight=True, nbins=4)
 ax2.tick_params(axis='y', labelcolor=orangecolor, labelsize=22)
 ax2.set_ylim(0, 100)  # Set limit to 100 for better comparison
 
-ax1.axhline(avg_final_acc, color=bluecolor, linestyle='-.', label='Accuracy (Retraining)', linewidth=4)
+ax1.axhline(avg_final_acc, color=bluecolor, linestyle='-.', label='Accuracy (Retraining)', linewidth=2) # 4
 
 # Add labels on top of Poison Success bars
 for bar in bars2:
     yval = bar.get_height()
-    ax2.text(bar.get_x() + bar.get_width()/2, yval + 1, f"{yval:.1f}", ha='center', color='black', fontsize=22)
+    ax2.text(bar.get_x() + bar.get_width()/2, yval + 1, f"{yval:.1f}", ha='center', color='black', fontsize=top_bar_values_size)
 
 # Set x-axis labels and title
 plt.xticks(index + bar_width / 2, methods)
@@ -513,7 +514,9 @@ plt.tight_layout()
 # Show the plot
 plt.savefig(save_name, dpi=800)
 """
-""" wichesbrew
+
+# wichesbrew
+"""
 # Set up figure and axis for dual-axis bar plot
 fig, ax1 = plt.subplots(figsize=(10, 6))
 
@@ -525,7 +528,7 @@ index = np.arange(len(methods))
 # bars1 = ax1.bar(index, test_accuracy, bar_width, color=bluecolor, label='Test Accuracy (%)')
 bars1 = ax1.bar(index, test_accuracy, bar_width, color=bluecolor)
 # ax1.set_xlabel("Method", fontsize=33)
-# ax1.set_ylabel("Test Accuracy (%)", color=bluecolor, fontsize=33)
+# ax1.set_ylabel("Test Accuracy (%)\n(more accurate →)", color=bluecolor, fontsize=side_text_size)
 ax1.locator_params(axis='y', tight=True, nbins=4)
 ax1.tick_params(axis='y', labelcolor=bluecolor, labelsize=22)
 ax1.tick_params(axis='x', labelsize=22)
@@ -534,23 +537,23 @@ ax1.set_ylim(0, 100)  # Set limit to 100 for better comparison
 # Add labels on top of Test Accuracy bars
 for bar in bars1:
     yval = bar.get_height()
-    ax1.text(bar.get_x() + bar.get_width()/2, yval + 1, f"{yval:.1f}", ha='center', color='black', fontsize=22)
+    ax1.text(bar.get_x() + bar.get_width()/2, yval + 1, f"{yval:.1f}", ha='center', color='black', fontsize=top_bar_values_size)
 
 # Secondary y-axis for Poison Success
 ax2 = ax1.twinx()
 bars2 = ax2.bar(index + bar_width, poison_success, bar_width, color=orangecolor, label='Poison Success (%)')
 # bars2 = ax2.bar(index + bar_width, poison_success, bar_width, color=orangecolor)
-ax2.set_ylabel("Poison Success (%)\n(← better unlearning)", color=orangecolor, fontsize=33)
+ax2.set_ylabel("Poison Success (%)\n(← better unlearning)", color=orangecolor, fontsize=side_text_size)
 ax2.locator_params(axis='y', tight=True, nbins=4)
 ax2.tick_params(axis='y', labelcolor=orangecolor, labelsize=22)
 ax2.set_ylim(0, 100)  # Set limit to 100 for better comparison
 
-ax1.axhline(avg_final_acc, color=bluecolor, linestyle='-.', label='Accuracy (Retraining)', linewidth=4)
+ax1.axhline(avg_final_acc, color=bluecolor, linestyle='-.', label='Accuracy (Retraining)', linewidth=2) # 4
 
 # Add labels on top of Poison Success bars
 for bar in bars2:
     yval = bar.get_height()
-    ax2.text(bar.get_x() + bar.get_width()/2, yval + 1, f"{yval:.1f}", ha='center', color='black', fontsize=22)
+    ax2.text(bar.get_x() + bar.get_width()/2, yval + 1, f"{yval:.1f}", ha='center', color='black', fontsize=top_bar_values_size)
 
 # Set x-axis labels and title
 plt.xticks(index + bar_width / 2, methods)
