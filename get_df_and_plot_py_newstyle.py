@@ -126,35 +126,35 @@ import pandas as pd
 
 ##### Frequency-Based Trigger Imagenette
 
-methods_smooth_trigger_imagenette = [
-    "influence", "threshold", "frequency analysis", 
-    "activation clustering", "spectral signature", 
-    "modify image", "modify label"
-]
+# methods_smooth_trigger_imagenette = [
+#     "influence", "threshold", "frequency analysis", 
+#     "activation clustering", "spectral signature", 
+#     "modify image", "modify label"
+# ]
 
-# Poisoning success rates and test accuracy extracted from the table
-poisoning_success_exp1_smooth_imagenette = [0.0, 0.0, 47.93, 2.59, 19.95, 62.18, 0.0]
-poisoning_success_exp2_smooth_imagenette = [0.25, 0.25, 56.35, 1.27, 29.7, 63.71, 0.51]
-poisoning_success_exp3_smooth_imagenette = [0.0, 0.0, 64.05, 7.59, 55.44, 71.90, 0.0]
+# # Poisoning success rates and test accuracy extracted from the table
+# poisoning_success_exp1_smooth_imagenette = [0.0, 0.0, 47.93, 2.59, 19.95, 62.18, 0.0]
+# poisoning_success_exp2_smooth_imagenette = [0.25, 0.25, 56.35, 1.27, 29.7, 63.71, 0.51]
+# poisoning_success_exp3_smooth_imagenette = [0.0, 0.0, 64.05, 7.59, 55.44, 71.90, 0.0]
 
-test_accuracy_exp1_smooth_imagenette = [72.74, 67.54, 68.15, 68.05, 34.78, 86.27, 71.67]
-test_accuracy_exp2_smooth_imagenette = [78.78, 74.90, 73.38, 69.66, 56.61, 81.99, 79.39]
-test_accuracy_exp3_smooth_imagenette = [75.36, 72.36, 69.45, 57.76, 56.48, 77.55, 75.59]
+# test_accuracy_exp1_smooth_imagenette = [72.74, 67.54, 68.15, 68.05, 34.78, 86.27, 71.67]
+# test_accuracy_exp2_smooth_imagenette = [78.78, 74.90, 73.38, 69.66, 56.61, 81.99, 79.39]
+# test_accuracy_exp3_smooth_imagenette = [75.36, 72.36, 69.45, 57.76, 56.48, 77.55, 75.59]
 
-# Create the dataframe with the required structure
-df = pd.DataFrame({
-    'Methods': methods_smooth_trigger_imagenette,
-    'Poisoning_Success_exp1': poisoning_success_exp1_smooth_imagenette,
-    'Poisoning_Success_exp2': poisoning_success_exp2_smooth_imagenette,
-    'Poisoning_Success_exp3': poisoning_success_exp3_smooth_imagenette,
-    'Test_Accuracy_exp1': test_accuracy_exp1_smooth_imagenette,
-    'Test_Accuracy_exp2': test_accuracy_exp2_smooth_imagenette,
-    'Test_Accuracy_exp3': test_accuracy_exp3_smooth_imagenette
-})
-avg_initial_poison = (59.84 + 62.44 + 76.20) / 3
-avg_final_acc = 81.14 
-name = 'frequency_imagenette'
-title = 'Imagenette (Frequency Poisoning)'
+# # Create the dataframe with the required structure
+# df = pd.DataFrame({
+#     'Methods': methods_smooth_trigger_imagenette,
+#     'Poisoning_Success_exp1': poisoning_success_exp1_smooth_imagenette,
+#     'Poisoning_Success_exp2': poisoning_success_exp2_smooth_imagenette,
+#     'Poisoning_Success_exp3': poisoning_success_exp3_smooth_imagenette,
+#     'Test_Accuracy_exp1': test_accuracy_exp1_smooth_imagenette,
+#     'Test_Accuracy_exp2': test_accuracy_exp2_smooth_imagenette,
+#     'Test_Accuracy_exp3': test_accuracy_exp3_smooth_imagenette
+# })
+# avg_initial_poison = (59.84 + 62.44 + 76.20) / 3
+# avg_final_acc = 81.14 
+# name = 'frequency_imagenette'
+# title = 'Imagenette (Frequency Poisoning)'
 
 ##### Witches Brew-Based Trigger CIFAR-10
 
@@ -268,9 +268,8 @@ title = 'Imagenette (Frequency Poisoning)'
 # title = 'Imagenette (Witche\'s Brew)'
 
 
-## ---
-
-
+## --- badnet (no right labels)
+"""
 df['Avg_Poisoning_Success'] = df[['Poisoning_Success_exp1', 'Poisoning_Success_exp2', 'Poisoning_Success_exp3']].mean(axis=1)
 df['Avg_Test_Accuracy'] = df[['Test_Accuracy_exp1', 'Test_Accuracy_exp2', 'Test_Accuracy_exp3']].mean(axis=1)
 print(df[['Methods', 'Avg_Poisoning_Success', 'Avg_Test_Accuracy']])
@@ -305,18 +304,20 @@ avg_poisoning_success = df1['Avg_Poisoning_Success']
 x = np.arange(len(methods))  # the label locations
 # width = 0.35  # the width of the bars
 width = 0.45  # the width of the bars
-plt.rcParams.update({'font.size': 15})
+method_names_fontsize = 20
+plt.rcParams.update({'font.size': method_names_fontsize})
 
 fig, ax1 = plt.subplots(figsize=(10, 6))
 
 # Plotting the Test Accuracy
-# bar1 = ax1.bar(x - width/2, avg_test_accuracy, width, label='Test Accuracy(%)', color=bluecolor)
-bar1 = ax1.bar(x - width/2, avg_test_accuracy, width, color=bluecolor)
-ax1.set_xlabel('Methods', fontsize=textsize)
-# ax1.set_ylabel('Test Accuracy(%)\n(more accurate →)', color=bluecolor, fontsize=textsize)
+bar1 = ax1.bar(x - width/2, avg_test_accuracy, width, label='Test Accuracy(%)', color=bluecolor)
+# bar1 = ax1.bar(x - width/2, avg_test_accuracy, width, color=bluecolor)
+# ax1.set_xlabel('Methods', fontsize=textsize)
+ax1.set_ylabel('Test Accuracy(%)\n(more accurate →)', color=bluecolor, fontsize=textsize)
 ax1.set_ylim([0, 100])
 ax1.set_xticks(x)
 ax1.set_xticklabels(methods, rotation=45, ha="right")
+ax1.locator_params(axis='y', tight=True, nbins=4)
 ax1.tick_params(axis='y', labelcolor=bluecolor, labelsize=22)
 
 # Creating a second y-axis for Poisoning Success
@@ -325,6 +326,7 @@ ax2 = ax1.twinx()
 bar2 = ax2.bar(x + width/2+ bar_width, avg_poisoning_success, width, color=orangecolor)
 # ax2.set_ylabel('Poison Success(%)\n(← better unlearning)', color=orangecolor, fontsize=textsize)
 ax2.set_ylim([0, 100])
+ax2.locator_params(axis='y', tight=True, nbins=4)
 ax2.tick_params(axis='y', labelcolor=orangecolor, labelsize=22)
 
 
@@ -374,18 +376,19 @@ avg_poisoning_success = df1['Avg_Poisoning_Success']
 
 x = np.arange(len(methods))  # the label locations
 width = 0.2  # the width of the bars
-plt.rcParams.update({'font.size': 15})
+plt.rcParams.update({'font.size': method_names_fontsize})
 
 fig, ax1 = plt.subplots(figsize=(10, 6))
 
 # Plotting the Test Accuracy
-# bar1 = ax1.bar(x - width/2, avg_test_accuracy, width, label='Test Accuracy(%)', color=bluecolor)
-bar1 = ax1.bar(x - width/2, avg_test_accuracy, width, color=bluecolor)
-ax1.set_xlabel('Methods', fontsize=textsize)
-# ax1.set_ylabel('Test Accuracy(%)\n(more accurate →)', color=bluecolor, fontsize=textsize)
+bar1 = ax1.bar(x - width/2, avg_test_accuracy, width, label='Test Accuracy(%)', color=bluecolor)
+# bar1 = ax1.bar(x - width/2, avg_test_accuracy, width, color=bluecolor)
+# ax1.set_xlabel('Methods', fontsize=textsize)
+ax1.set_ylabel('Test Accuracy(%)\n(more accurate →)', color=bluecolor, fontsize=textsize)
 ax1.set_ylim([0, 100])
 ax1.set_xticks(x)
 ax1.set_xticklabels(methods, rotation=45, ha="right")
+ax1.locator_params(axis='y', tight=True, nbins=4)
 ax1.tick_params(axis='y', labelcolor=bluecolor, labelsize=22)
 
 # Creating a second y-axis for Poisoning Success
@@ -394,6 +397,333 @@ ax2 = ax1.twinx()
 bar2 = ax2.bar(x + width/2 + bar_width, avg_poisoning_success, width, color=orangecolor)
 # ax2.set_ylabel('Poison Success(%)\n(← better unlearning)', color=orangecolor, fontsize=textsize)
 ax2.set_ylim([0, 100])
+ax2.locator_params(axis='y', tight=True, nbins=4)
+ax2.tick_params(axis='y', labelcolor=orangecolor, labelsize=22)
+
+
+# Adding the lines at 98.9% for Poison Success and 92% for Test Accuracy
+ax2.axhline(avg_initial_poison, color=orangecolor, linestyle='-.', label='Poison Success (No unlearning)', linewidth=2)
+ax1.axhline(avg_final_acc, color=bluecolor, linestyle='-.', label='Accuracy (Retraining)', linewidth=2)
+
+# Adding the legend
+#fig.legend(loc="upper right", bbox_to_anchor=(1, 1), bbox_transform=ax1.transAxes)
+
+# Adding the values on top of the bars
+for rect in bar1:
+    height = rect.get_height()
+    ax1.annotate(f'{height:.1f}', 
+                 xy=(rect.get_x() + rect.get_width() / 2, height), 
+                 xytext=(0, 3), 
+                 textcoords="offset points", 
+                 ha='center', va='bottom', color='black', fontsize=18)
+
+for rect in bar2:
+    height = rect.get_height()
+    ax2.annotate(f'{height:.1f}', 
+                 xy=(rect.get_x() + rect.get_width() / 2, height), 
+                 xytext=(0, 3), 
+                 textcoords="offset points", 
+                 ha='center', va='bottom', color='black', fontsize=18)
+
+# plt.title(title)
+plt.tight_layout()
+
+# Display the plot
+plt.savefig(f'{name}_abl.png', dpi=800)
+"""
+### frequency (no ylabels)
+"""
+df['Avg_Poisoning_Success'] = df[['Poisoning_Success_exp1', 'Poisoning_Success_exp2', 'Poisoning_Success_exp3']].mean(axis=1)
+df['Avg_Test_Accuracy'] = df[['Test_Accuracy_exp1', 'Test_Accuracy_exp2', 'Test_Accuracy_exp3']].mean(axis=1)
+print(df[['Methods', 'Avg_Poisoning_Success', 'Avg_Test_Accuracy']])
+
+
+import matplotlib.pyplot as plt
+import numpy as np
+import seaborn as sns
+
+sns.set_palette('tab10')
+bluecolor=sns.color_palette('tab10')[0]
+orangecolor=sns.color_palette('tab10')[1]
+
+textsize = 26
+bar_width = 0.01
+
+methods_dict = {
+    'influence': 'Δ-Infl (Ours)',
+    'threshold': 'EK-FAC', 
+    'frequency analysis': 'FreqDef', 
+    'activation clustering': 'ActClust', 
+    'spectral signature': 'SpecSig'
+}
+
+
+# Data for plotting
+df1 = df[df['Methods'].isin(['influence', 'threshold', 'frequency analysis', 'activation clustering', 'spectral signature'])]
+methods = df1['Methods'].map(methods_dict)
+avg_test_accuracy = df1['Avg_Test_Accuracy']
+avg_poisoning_success = df1['Avg_Poisoning_Success']
+
+x = np.arange(len(methods))  # the label locations
+# width = 0.35  # the width of the bars
+width = 0.45  # the width of the bars
+method_names_fontsize = 20
+plt.rcParams.update({'font.size': method_names_fontsize})
+
+fig, ax1 = plt.subplots(figsize=(10, 6))
+
+# Plotting the Test Accuracy
+# bar1 = ax1.bar(x - width/2, avg_test_accuracy, width, label='Test Accuracy(%)', color=bluecolor)
+bar1 = ax1.bar(x - width/2, avg_test_accuracy, width, color=bluecolor)
+# ax1.set_xlabel('Methods', fontsize=textsize)
+# ax1.set_ylabel('Test Accuracy(%)\n(more accurate →)', color=bluecolor, fontsize=textsize)
+ax1.set_ylim([0, 100])
+ax1.set_xticks(x)
+ax1.set_xticklabels(methods, rotation=45, ha="right")
+ax1.locator_params(axis='y', tight=True, nbins=4)
+ax1.tick_params(axis='y', labelcolor=bluecolor, labelsize=22)
+
+# Creating a second y-axis for Poisoning Success
+ax2 = ax1.twinx()
+# bar2 = ax2.bar(x + width/2+ bar_width, avg_poisoning_success, width, label='Poison Success(%)', color=orangecolor)
+bar2 = ax2.bar(x + width/2+ bar_width, avg_poisoning_success, width, color=orangecolor)
+# ax2.set_ylabel('Poison Success(%)\n(← better unlearning)', color=orangecolor, fontsize=textsize)
+ax2.set_ylim([0, 100])
+ax2.locator_params(axis='y', tight=True, nbins=4)
+ax2.tick_params(axis='y', labelcolor=orangecolor, labelsize=22)
+
+
+# Adding the lines at 98.9% for Poison Success and 92% for Test Accuracy
+ax2.axhline(avg_initial_poison, color=orangecolor, linestyle='-.', label='Poison Success (No unlearning)', linewidth=2)
+ax1.axhline(avg_final_acc, color=bluecolor, linestyle='-.', label='Accuracy (Retraining)', linewidth=2)
+
+# Adding the legend
+#fig.legend(loc="upper right", bbox_to_anchor=(1, 1), bbox_transform=ax1.transAxes)
+
+# Adding the values on top of the bars
+for rect in bar1:
+    height = rect.get_height()
+    ax1.annotate(f'{height:.1f}', 
+                 xy=(rect.get_x() + rect.get_width() / 2, height), 
+                 xytext=(0, 3), 
+                 textcoords="offset points", 
+                 ha='center', va='bottom', color='black', fontsize=18)
+
+for rect in bar2:
+    height = rect.get_height()
+    ax2.annotate(f'{height:.1f}', 
+                 xy=(rect.get_x() + rect.get_width() / 2, height), 
+                 xytext=(0, 3), 
+                 textcoords="offset points", 
+                 ha='center', va='bottom', color='black', fontsize=18)
+
+# plt.title(title)
+plt.tight_layout()
+
+# Display the plot
+plt.savefig(f'{name}.png', dpi=800)
+
+
+## Ablation
+methods_dict = {
+    'influence': 'Δ-Infl (Ours)',
+    "modify image": 'Δ-Inf (Img-Only)', 
+    "modify label": 'Δ-Inf (Label-Only)'
+}
+
+# Data for plotting
+df1 = df[df['Methods'].isin(["influence", "modify image", "modify label"])]
+methods = df1['Methods'].map(methods_dict)
+avg_test_accuracy = df1['Avg_Test_Accuracy']
+avg_poisoning_success = df1['Avg_Poisoning_Success']
+
+x = np.arange(len(methods))  # the label locations
+width = 0.2  # the width of the bars
+plt.rcParams.update({'font.size': method_names_fontsize})
+
+fig, ax1 = plt.subplots(figsize=(10, 6))
+
+# Plotting the Test Accuracy
+# bar1 = ax1.bar(x - width/2, avg_test_accuracy, width, label='Test Accuracy(%)', color=bluecolor)
+bar1 = ax1.bar(x - width/2, avg_test_accuracy, width, color=bluecolor)
+# ax1.set_xlabel('Methods', fontsize=textsize)
+# ax1.set_ylabel('Test Accuracy(%)\n(more accurate →)', color=bluecolor, fontsize=textsize)
+ax1.set_ylim([0, 100])
+ax1.set_xticks(x)
+ax1.set_xticklabels(methods, rotation=45, ha="right")
+ax1.locator_params(axis='y', tight=True, nbins=4)
+ax1.tick_params(axis='y', labelcolor=bluecolor, labelsize=22)
+
+# Creating a second y-axis for Poisoning Success
+ax2 = ax1.twinx()
+# bar2 = ax2.bar(x + width/2 + bar_width, avg_poisoning_success, width, label='Poison Success(%)', color=orangecolor)
+bar2 = ax2.bar(x + width/2 + bar_width, avg_poisoning_success, width, color=orangecolor)
+# ax2.set_ylabel('Poison Success(%)\n(← better unlearning)', color=orangecolor, fontsize=textsize)
+ax2.set_ylim([0, 100])
+ax2.locator_params(axis='y', tight=True, nbins=4)
+ax2.tick_params(axis='y', labelcolor=orangecolor, labelsize=22)
+
+
+# Adding the lines at 98.9% for Poison Success and 92% for Test Accuracy
+ax2.axhline(avg_initial_poison, color=orangecolor, linestyle='-.', label='Poison Success (No unlearning)', linewidth=2)
+ax1.axhline(avg_final_acc, color=bluecolor, linestyle='-.', label='Accuracy (Retraining)', linewidth=2)
+
+# Adding the legend
+#fig.legend(loc="upper right", bbox_to_anchor=(1, 1), bbox_transform=ax1.transAxes)
+
+# Adding the values on top of the bars
+for rect in bar1:
+    height = rect.get_height()
+    ax1.annotate(f'{height:.1f}', 
+                 xy=(rect.get_x() + rect.get_width() / 2, height), 
+                 xytext=(0, 3), 
+                 textcoords="offset points", 
+                 ha='center', va='bottom', color='black', fontsize=18)
+
+for rect in bar2:
+    height = rect.get_height()
+    ax2.annotate(f'{height:.1f}', 
+                 xy=(rect.get_x() + rect.get_width() / 2, height), 
+                 xytext=(0, 3), 
+                 textcoords="offset points", 
+                 ha='center', va='bottom', color='black', fontsize=18)
+
+# plt.title(title)
+plt.tight_layout()
+
+# Display the plot
+plt.savefig(f'{name}_abl.png', dpi=800)
+"""
+
+### witches brew (no left ylabels)
+df['Avg_Poisoning_Success'] = df[['Poisoning_Success_exp1', 'Poisoning_Success_exp2', 'Poisoning_Success_exp3']].mean(axis=1)
+df['Avg_Test_Accuracy'] = df[['Test_Accuracy_exp1', 'Test_Accuracy_exp2', 'Test_Accuracy_exp3']].mean(axis=1)
+print(df[['Methods', 'Avg_Poisoning_Success', 'Avg_Test_Accuracy']])
+
+
+import matplotlib.pyplot as plt
+import numpy as np
+import seaborn as sns
+
+sns.set_palette('tab10')
+bluecolor=sns.color_palette('tab10')[0]
+orangecolor=sns.color_palette('tab10')[1]
+
+textsize = 26
+bar_width = 0.01
+
+methods_dict = {
+    'influence': 'Δ-Infl (Ours)',
+    'threshold': 'EK-FAC', 
+    'frequency analysis': 'FreqDef', 
+    'activation clustering': 'ActClust', 
+    'spectral signature': 'SpecSig'
+}
+
+
+# Data for plotting
+df1 = df[df['Methods'].isin(['influence', 'threshold', 'frequency analysis', 'activation clustering', 'spectral signature'])]
+methods = df1['Methods'].map(methods_dict)
+avg_test_accuracy = df1['Avg_Test_Accuracy']
+avg_poisoning_success = df1['Avg_Poisoning_Success']
+
+x = np.arange(len(methods))  # the label locations
+# width = 0.35  # the width of the bars
+width = 0.45  # the width of the bars
+method_names_fontsize = 20
+plt.rcParams.update({'font.size': method_names_fontsize})
+
+fig, ax1 = plt.subplots(figsize=(10, 6))
+
+# Plotting the Test Accuracy
+# bar1 = ax1.bar(x - width/2, avg_test_accuracy, width, label='Test Accuracy(%)', color=bluecolor)
+bar1 = ax1.bar(x - width/2, avg_test_accuracy, width, color=bluecolor)
+# ax1.set_xlabel('Methods', fontsize=textsize)
+# ax1.set_ylabel('Test Accuracy(%)\n(more accurate →)', color=bluecolor, fontsize=textsize)
+ax1.set_ylim([0, 100])
+ax1.set_xticks(x)
+ax1.set_xticklabels(methods, rotation=45, ha="right")
+ax1.locator_params(axis='y', tight=True, nbins=4)
+ax1.tick_params(axis='y', labelcolor=bluecolor, labelsize=22)
+
+# Creating a second y-axis for Poisoning Success
+ax2 = ax1.twinx()
+bar2 = ax2.bar(x + width/2+ bar_width, avg_poisoning_success, width, label='Poison Success(%)', color=orangecolor)
+# bar2 = ax2.bar(x + width/2+ bar_width, avg_poisoning_success, width, color=orangecolor)
+ax2.set_ylabel('Poison Success(%)\n(← better unlearning)', color=orangecolor, fontsize=textsize)
+ax2.set_ylim([0, 100])
+ax2.locator_params(axis='y', tight=True, nbins=4)
+ax2.tick_params(axis='y', labelcolor=orangecolor, labelsize=22)
+
+
+# Adding the lines at 98.9% for Poison Success and 92% for Test Accuracy
+ax2.axhline(avg_initial_poison, color=orangecolor, linestyle='-.', label='Poison Success (No unlearning)', linewidth=2)
+ax1.axhline(avg_final_acc, color=bluecolor, linestyle='-.', label='Accuracy (Retraining)', linewidth=2)
+
+# Adding the legend
+#fig.legend(loc="upper right", bbox_to_anchor=(1, 1), bbox_transform=ax1.transAxes)
+
+# Adding the values on top of the bars
+for rect in bar1:
+    height = rect.get_height()
+    ax1.annotate(f'{height:.1f}', 
+                 xy=(rect.get_x() + rect.get_width() / 2, height), 
+                 xytext=(0, 3), 
+                 textcoords="offset points", 
+                 ha='center', va='bottom', color='black', fontsize=18)
+
+for rect in bar2:
+    height = rect.get_height()
+    ax2.annotate(f'{height:.1f}', 
+                 xy=(rect.get_x() + rect.get_width() / 2, height), 
+                 xytext=(0, 3), 
+                 textcoords="offset points", 
+                 ha='center', va='bottom', color='black', fontsize=18)
+
+# plt.title(title)
+plt.tight_layout()
+
+# Display the plot
+plt.savefig(f'{name}.png', dpi=800)
+
+
+## Ablation
+methods_dict = {
+    'influence': 'Δ-Infl (Ours)',
+    "modify image": 'Δ-Inf (Img-Only)', 
+    "modify label": 'Δ-Inf (Label-Only)'
+}
+
+# Data for plotting
+df1 = df[df['Methods'].isin(["influence", "modify image", "modify label"])]
+methods = df1['Methods'].map(methods_dict)
+avg_test_accuracy = df1['Avg_Test_Accuracy']
+avg_poisoning_success = df1['Avg_Poisoning_Success']
+
+x = np.arange(len(methods))  # the label locations
+width = 0.2  # the width of the bars
+plt.rcParams.update({'font.size': method_names_fontsize})
+
+fig, ax1 = plt.subplots(figsize=(10, 6))
+
+# Plotting the Test Accuracy
+# bar1 = ax1.bar(x - width/2, avg_test_accuracy, width, label='Test Accuracy(%)', color=bluecolor)
+bar1 = ax1.bar(x - width/2, avg_test_accuracy, width, color=bluecolor)
+# ax1.set_xlabel('Methods', fontsize=textsize)
+# ax1.set_ylabel('Test Accuracy(%)\n(more accurate →)', color=bluecolor, fontsize=textsize)
+ax1.set_ylim([0, 100])
+ax1.set_xticks(x)
+ax1.set_xticklabels(methods, rotation=45, ha="right")
+ax1.locator_params(axis='y', tight=True, nbins=4)
+ax1.tick_params(axis='y', labelcolor=bluecolor, labelsize=22)
+
+# Creating a second y-axis for Poisoning Success
+ax2 = ax1.twinx()
+bar2 = ax2.bar(x + width/2 + bar_width, avg_poisoning_success, width, label='Poison Success(%)', color=orangecolor)
+# bar2 = ax2.bar(x + width/2 + bar_width, avg_poisoning_success, width, color=orangecolor)
+ax2.set_ylabel('Poison Success(%)\n(← better unlearning)', color=orangecolor, fontsize=textsize)
+ax2.set_ylim([0, 100])
+ax2.locator_params(axis='y', tight=True, nbins=4)
 ax2.tick_params(axis='y', labelcolor=orangecolor, labelsize=22)
 
 
