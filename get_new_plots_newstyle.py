@@ -411,14 +411,14 @@ plt.rcParams.update({'font.size': 22})  # Adjust '14' to your desired font size
 # plt.savefig("cifar100_wb.png", dpi=800)
 
 ## --- (wb imagenette) ---
-save_name = "imagenette_wb.png"
-# Data from the user
-methods = ["EU", "CF", "SSD", "Scrub", "BadT"]
-poison_success = [0.00, 0.00, 0.00, 0.00, 100.00]  # Poison Success (%) values
-test_accuracy = [71.82, 78.68, 74.65, 40.36, 72.41]  # Test Accuracy (%) values
-avg_final_acc = 81.14
+# save_name = "imagenette_wb.png"
+# # Data from the user
+# methods = ["EU", "CF", "SSD", "Scrub", "BadT"]
+# poison_success = [0.00, 0.00, 0.00, 0.00, 100.00]  # Poison Success (%) values
+# test_accuracy = [71.82, 78.68, 74.65, 40.36, 72.41]  # Test Accuracy (%) values
+# avg_final_acc = 81.14
 
-""" badnet
+# badnet
 # Set up figure and axis for dual-axis bar plot
 fig, ax1 = plt.subplots(figsize=(10, 6))
 
@@ -430,7 +430,7 @@ index = np.arange(len(methods))
 bars1 = ax1.bar(index, test_accuracy, bar_width, color=bluecolor, label='Test Accuracy (%)')
 # bars1 = ax1.bar(index, test_accuracy, bar_width, color=bluecolor)
 # ax1.set_xlabel("Method", fontsize=33)
-ax1.set_ylabel("Test Accuracy (%)", color=bluecolor, fontsize=33)
+ax1.set_ylabel("Test Accuracy (%)\n(more accurate →)", color=bluecolor, fontsize=33)
 ax1.locator_params(axis='y', tight=True, nbins=4)
 ax1.tick_params(axis='y', labelcolor=bluecolor, labelsize=22)
 ax1.tick_params(axis='x', labelsize=22)
@@ -464,8 +464,9 @@ plt.tight_layout()
 
 # Show the plot
 plt.savefig(save_name, dpi=800)
+
 """
-""" frequency
+# frequency
 # Set up figure and axis for dual-axis bar plot
 fig, ax1 = plt.subplots(figsize=(10, 6))
 
@@ -512,7 +513,7 @@ plt.tight_layout()
 # Show the plot
 plt.savefig(save_name, dpi=800)
 """
-
+""" wichesbrew
 # Set up figure and axis for dual-axis bar plot
 fig, ax1 = plt.subplots(figsize=(10, 6))
 
@@ -539,7 +540,7 @@ for bar in bars1:
 ax2 = ax1.twinx()
 bars2 = ax2.bar(index + bar_width, poison_success, bar_width, color=orangecolor, label='Poison Success (%)')
 # bars2 = ax2.bar(index + bar_width, poison_success, bar_width, color=orangecolor)
-ax2.set_ylabel("Poison Success (%)", color=orangecolor, fontsize=33)
+ax2.set_ylabel("Poison Success (%)\n(← better unlearning)", color=orangecolor, fontsize=33)
 ax2.locator_params(axis='y', tight=True, nbins=4)
 ax2.tick_params(axis='y', labelcolor=orangecolor, labelsize=22)
 ax2.set_ylim(0, 100)  # Set limit to 100 for better comparison
@@ -558,3 +559,4 @@ plt.tight_layout()
 
 # Show the plot
 plt.savefig(save_name, dpi=800)
+"""
